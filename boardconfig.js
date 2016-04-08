@@ -5,16 +5,14 @@
 moveNumber = 0;
 playerTurn = true;
 engine = new Worker('stockfish.js');
-playerSide = 'w';
+playerSide = '';
 var engineMessages = [""];
 var depthResults = [""];
 
 var moves = [new moveData("", "", "", "")];
 
 $(document).ready(function () {
-    playerTurn = (playerSide == 'w') ? true : false;
-    init();
-
+    start('b');
 });
 
 var init = function () {
@@ -35,7 +33,7 @@ var init = function () {
     };
 
 	//Making black choose a random legal move to make
-	var makeRandomMove = function() {
+var makeRandomMove = function() {
   var possibleMoves = game.moves();
 
   // game over
@@ -78,7 +76,12 @@ var init = function () {
             board1.position(game.fen());
         };
 		updateStatus();
-		window.setTimeout(makeRandomMove, 250);    //Computer makes random move for black   
+           
+        
+        
+        
+            if (playerTurn == false)
+                window.setTimeout(makeRandomMove, 250);    //Computer makes random move for the opponent
     };
 
     var onMouseoverSquare = function (square, piece) {
@@ -165,8 +168,16 @@ var init = function () {
     board1 = ChessBoard('board', cfg);
 
     updateStatus();
+    if (playerTurn == false )
+            window.setTimeout(makeRandomMove, 250);    //Computer makes random move for the opponent
 
 }; // end init()
+
+function start(side){
+    playerSide = side;
+    playerTurn = (playerSide == 'w') ? true : false;
+    init();
+};
 
 //Move data object template
 function moveData(squareFrom, squareTo, movingPiece, takenPiece) {

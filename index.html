@@ -12,17 +12,6 @@
 		<title>Chess Tutor | Play &amp; Learn</title>
 		<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 		<link rel="shortcut icon" href="img/iconHorse.png" type="image/png" />
-		
-		<!--Chess Integration-->
-		
-		<link rel="stylesheet" type="text/css" href="board/css/chessboard.css">
-        <script src="board/js/json3.min.js"></script>
-        <script src="board/js/jquery-1.10.1.min.js"></script>
-        <script src="board/js/prettify.js"></script>
-        <script type="text/javascript" src="board/js/chessboard.js"></script>
-        <script type="text/javascript" src="board/js/chess.js"></script>
-        <script type="text/javascript" src="tutor.js"></script>
-        <script type="text/javascript" src="boardconfig.js"></script>
 
 	</head>
 
@@ -32,7 +21,7 @@
 
 					<div class="navItems">
 						<ul>
-							<li><a href="#">Play</a></li>
+							<li><a href="play.html">Play</a></li>
 							<li><a href="#">Rules</a></li>
 							<li><a href="#">Contact</a></li>
 						</ul>
@@ -59,77 +48,66 @@
 			</div>
 		</div>
 		<div class="wrapper">
-		
-			<section class="textSection">
-				<img src="img/SectionItem.jpg" alt="Chess" />
-				<h3><q>Chess Tutor has over 12,000 players currently online and over 30,000 members. Play Chess against others with the help from players ranging from beginners to Grandmasters!</q></h6>
-				<a href="#" class="buttonText">Play Chess Now</a>
-			</section>
-			<section class="textSection" id="difftextSection">
-				<img src="img/SectionItem.jpg" alt="Chess" />
-				<h3><q>Chess Tutor has over 12,000 players currently online and over 30,000 members. Play Chess against others with the help from players ranging from beginners to Grandmasters!</q></h6>
-				<a href="#" class="buttonText">Play Chess Now</a>
-			</section>
-			<section class="textSection">
-				<img src="img/SectionItem.jpg" alt="Chess" />
-				<h3><q>Chess Tutor has over 12,000 players currently online and over 30,000 members. Play Chess against others with the help from players ranging from beginners to Grandmasters!</q></h6>
-				<a href="#" class="buttonText">Play Chess Now</a>
-			</section>
-
-			<div class="chessSection">
-			
-			
-			<!-- chess board testing here -->
-			<!-- Sorry for the Table element, Henry -->
-			<table stype="width:80%">
-            <tr>
-                <td><div id="board" style="width: 400px"></div></td>
-                <td><p id="response"></p></td>
-            </tr>
-                <td></td>
-                <td><p id="typing"></p></td>
-			</table>
+			<div id="textSectionWrap">
+				<section class="textSection">
+					<img src="img/SectionItem.jpg" alt="Chess" />
+					<h3><q>Chess Tutor has over 12,000 players currently online and over 30,000 members. Play Chess against others with the help from players ranging from beginners to Grandmasters!</q></h3>
+					<a href="play.html" class="buttonText">Play Chess Now</a>
+				</section>
 			</div>
-			 <!-- <section class="boxSection">
-				<div class="boxSectionInner">
-					<h2>Explore Chess Tutor</h2>
-
-
-
-					 <div class="box">
-						<img src="img/box/tactics.jpg" alt="Rules &amp; Tactics" />
-						<h4>Rules &amp; Tactics</h4>
-						<p>Get to grips with Chess by learning the rules</p>
-					</div>
-
+			<div id="full_background_Width">
+				<section class="boxSection">
+					<h3>Explore Chess Tutor</h3>
 					<div class="box">
-						<img src="img/box/tactics.jpg" alt="Information" />
-						<h4>Information</h4>
-						<p>Chess Tutor was founded by 7 computer-oritneted University Students.</p>
+						<a href="#"><img src="img/box/playing1.jpg" alt="box"></a>
+						<h4 class="boxTitle">Rules &amp; Tactics</h4>
+						<p>Get to grips with Chess by learning the rules. Some infomation about the image above could be here, blah blah blah ooh look some more informaiton eh eh eh</p>
+						<a href="#" class="buttonText">Find Out More</a>
 					</div>
-
 					<div class="box">
-						<img src="img/box/tactics.jpg" alt="Contact Us" />
-						<h4>Contact Us</h4>
+						<a href="#"><img src="img/box/information.jpg" alt="box"></a>
+						<h4 class="boxTitle">Information</h4>
+						<p>Chess Tutor was founded by 7 computer-oritneted students studying at the University of Lincoln. Blah blah Blah Blah Blah Blah Blah</p>
+						<a href="#" class="buttonText">Find Out More</a>
+					</div>
+					<div class="box">
+						<a href="#"><img src="img/box/contact.jpg" alt="box"></a>
+						<h4 class="boxTitle">Contact Us</h4>
 						<p>Please feel free to contact us either through email or other communication methods - We'd love to hear your feedback!</p>
-					
+						<a href="#" class="buttonText">Find Out More</a>
+					</div>
+				</section>
+            </div>
+            
+			<div id="playSectionWrap">
+                <section class="playSection">
+                        <img src="img/trophy.png" alt="Play chess Trophy" />
+                        <h4>What are you waiting for?</h4>
+                      <h3>Your Chess journey begins here</h3>
+                        <a href="play.html" class="button">Play Now</a>
+                </section>                    
+            </div>
+            
+            
+            
 
-				</div> 
-			</section>
-		</div> -->
-		<div class="clearfooter"></div>
+		<div class="clearBoth"></div>
+
 		<footer class="footerWrap">
-			<!-- <h4>Join our mailiing list</h4>
-			<p>Sign up to recieve updates about Chess Tutor, events, freebies, and much more</p> -->
+		
 			<ul class="footerNav">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Play</a></li>
+				<li><a href="index.html">Home</a></li>
+				|
+				<li><a href="play.html">Play</a></li>
+				|
 				<li><a href="#">Rules</a></li>
+				|
 				<li><a href="#">Contact</a></li>
 
 			</ul>
-			<p>&copy; 2016 All Rights Reserved | Website Created by Chess Tutor</p>
-		</footer>
+			<p>&copy; 2016 All Rights Reserved | Website Created by Chess Tutor Group 16</p>
+		</footer> 
+            
 	</body>
 
 </html>

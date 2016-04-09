@@ -1,4 +1,10 @@
 /* Stylesheet - Henry Wallis: Chess Tutor */
+
+/* CHESS TUTOR: POWERED BY
+> https://github.com/exoticorn/stockfish-js  
+> https://github.com/oakmac/chessboardjs
+*/
+
 @import url(https://fonts.googleapis.com/css?family=Hind+Siliguri:400,700);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 @import url(https://fonts.googleapis.com/css?family=Palanquin+Dark);
@@ -11,6 +17,8 @@
 body {
 	margin: 0;
 	padding: 0;
+	min-width: 1200px;
+	height: 100%;
 	/* background: #F8F4F1; */
 }
 
@@ -77,10 +85,11 @@ a:hover {
 	color: #29221f;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	font-size: 1em;
+	font-size: 12px;
 	text-decoration: underline;
 	transition: all 0.3s ease 0s;
 	font-weight: bold;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .buttonText:hover {
@@ -105,11 +114,14 @@ a:hover {
 
 .headerContainer {
 	width: 98%;
+	min-width: 1136px;
 }
 
 .social-Icons {
 	display: inline-block;
-	float: right;
+	position: absolute;
+	top: 22px;
+	right: 1%;
 }
 
 .social-Icon {
@@ -175,11 +187,12 @@ a:hover {
 	z-index: 10;
 	position: fixed;
 	top: 0;
+    min-width: 1136px;      
 }
 
 #logoMain {
-	position: absolute;
-	left: 47%;
+	position: relative;
+	left: 47.68%;
 }
 
 
@@ -208,7 +221,7 @@ a:hover {
 	min-height: 511px;
 	margin: 0 auto;
 	padding: 0;
-	top: 114px;
+	top: 116px;
 	text-align: center;
 
 }
@@ -240,16 +253,17 @@ a:hover {
 }
 
 .wrapper {
-	margin: 114px auto;
+	margin: 0 auto -155px;
     background: #fff;
     text-align: center;
-    height: 100%;
+    min-height: 100%;
+    position: relative;
+    top: 116px;
 }
 
 
 .textSection {
 	position: relative;
-	top: 36%;
 	padding: 50px 0 90px 0;
 	max-width: 900px;
 	margin: 0 auto;
@@ -278,12 +292,268 @@ h2 {
 }
 
 footer {
-	height: 9px;
-	position: relative;
-
 	border-top: 1px solid #E4E4E4;
 	text-align: center;
 	background: #fff;
+	display: block;
+	height: 90px;
 }
 
 
+footer p {
+	font-size: 17px;
+	font-family: 'Josefin Sans', sans-serif;
+	margin: 0 auto;
+}
+
+/* Homepage box section */
+
+#full_background_Width {
+	background-color: #F8F4F1;
+}
+
+#full_background_WidthWhite {
+    background-color: #fff;
+}
+
+.boxSection{
+	text-align: center;
+	width: 1104px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 650px;
+	background-color: #F8F4F1;
+	padding-top: 50px;
+
+}
+
+.clearBoth {
+	clear:both;
+}
+
+.boxSection .box {
+	max-width: 398px;
+	float: left;
+	margin: 0px 15px 1px 15px;
+	background-color: #fff;
+	padding-bottom: 30px;
+	
+}
+
+.boxSection .box img {
+	height: 231px;
+	width: 338px;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+	opacity: 1;
+}
+
+.boxSection .box img:hover {
+	opacity: .5;
+}
+
+
+.boxSection .box p {
+
+	margin: 0px 0px 0px 35px;
+	max-width: 269px;
+	height: 150px;
+	text-align: left;
+	font-family: 'Open Sans', sans-serif;
+	color: #222;
+	font-size: 15px;
+
+}
+
+.boxSection h3 {
+
+	margin-bottom: 37px;
+	text-transform: uppercase;
+	font-family: 'Josefin Sans', sans-serif;
+	color: #222;
+	font-size: 25px;
+
+}
+.boxTitle {
+	margin-bottom: 37px;
+	text-transform: uppercase;
+	font-family: 'Josefin Sans', sans-serif;
+	color: #222;
+	font-size: 19px;
+	letter-spacing: 0.1em;
+	text-align: left;
+	margin: 20px 0px 20px 34px;
+	width: 269px;
+
+}
+
+.box .buttonText {
+	text-align: left;
+	display: block;
+	margin: 0px 0px 0px 34px;
+	width: 120px;
+}
+
+
+ #ChessWrap {
+    height: 500px ; 
+}
+
+.SectionChessClass {
+    text-align: center;
+    width: 1104px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+    height: 399px;
+}
+
+.chessSection #board {
+    position: relative;
+    left: 290px;
+}
+
+/* Homebage box section finish */
+
+#playSectionWrap {
+    background-color: #fff;
+}
+
+.playSection {
+    text-align: center;
+    width: 1104px;
+    margin: 0px auto;
+    padding: 42px 0px;
+    height: auto;
+    padding: 81px 0 81px 0;
+}
+
+.playSection h3 {
+	color: #333;
+	font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+	line-height: 1.3em;
+	font-size: 25px;
+	margin: 10px 0 20px 0px;
+
+}
+
+.playSection h4 {
+    color: #555;
+    text-transform: uppercase;
+	font-family: 'Josefin Sans', sans-serif;
+	line-height: 1.3em;
+	font-size: 18px;
+	margin: 10px 0px 20px 0px;
+}
+
+.playSection img {
+    width: 200px;
+    height: auto;
+}
+
+#boardUI {
+    background: #809867 none repeat scroll 0% 0%;
+    border: 2px solid #222;
+    width: 250px;
+    position: relative;
+    top: -396px;
+    left: 691px;
+    margin: 0px;
+    padding: 0px;
+    height: 392px;
+}
+
+#boardUIText {
+    background-color: #F1E8CA;
+    width: 235px;
+    position: relative;
+    left: 5px;
+    height: 266px;
+    border: 2px solid #222;
+    bottom: 0px;
+}
+
+p#response {
+    text-align: left;
+    font-family: "Open Sans",sans-serif;
+    color: #222;
+    height: 201px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 0px;
+    position: relative;
+    top: 0px;
+    font-size: 19px;
+}
+
+p#typing {
+    font-family: "Open Sans",sans-serif;
+    color: #222;
+    height: 21px;
+    margin: 0px;
+    top: 36px;
+    font-size: 14px;
+    padding-left: 6px;
+    padding-right: 6px;
+    text-align: left;
+    border-top: 2px solid #222;
+}
+
+.board-b72b1 {
+    border: 2px solid #222 !important;
+}
+
+.chessText {
+    text-transform: uppercase;
+    font-family: "Josefin Sans",sans-serif;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+#chessTitle {
+    color: #F1E8CA;
+    font-size: 34px;
+    letter-spacing: 0.1em;
+    margin-bottom: 5px;
+    margin-top: 0px;
+}
+
+#chessChatText {
+    color: #F1E8CA;
+    font-size: 19px;
+    letter-spacing: 0.1em;
+}
+
+#chessUser {
+    text-align: left;
+    font-family: "Open Sans",sans-serif;
+    color: #222;
+    margin: 0px;
+    position: relative;
+    top: 0px;
+    font-size: 14px;
+    height: 23px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-bottom: 2px solid #222;
+}
+
+#playerOnline {
+    float: left;
+    position: relative;
+    top: 0px;
+    height: 20px;
+    width: 20px;
+    
+}
+
+.black-3c85d {
+    background-color: #809867;
+}
+
+.white-1e1d7 {
+    background-color: #F1E8CA;
+}

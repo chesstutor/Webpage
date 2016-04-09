@@ -551,9 +551,10 @@ p#typing {
 }
 
 .black-3c85d {
-    background-color: #809867;
+    background-color: #809867 !important;
 }
 
 .white-1e1d7 {
-    background-color: #F1E8CA;
+    background-color: #F1E8CA !important;
 }
+

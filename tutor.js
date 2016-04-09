@@ -47,6 +47,7 @@ function buildSentence(sentenceArray, targetPiece) {
     //Select a random sentence structure
     var suggestion = sentenceArray[Math.floor((Math.random() * (sentenceArray.length - 1)) + 0)];
     //Add contextual information to the string
+    //If '&p1' is not found, a random string will be still be returned from the array
     suggestion = suggestion.replace('&p1', targetPiece);
     return suggestion;
 };
@@ -160,7 +161,7 @@ function response_startMove() {
 
         , "You should aim to hold control of the King's and Queen's files 'D' and 'E' during the opening."]
 
-    return sentences[Math.floor((Math.random() * 9) + 0)]
+    return sentences[Math.floor((Math.random() * 9) + 0)];
 };
 
 function response_check(moves) {
@@ -316,4 +317,4 @@ function getPart(move, toFrom, axis) {
         return move[toFrom].substr(1, 2);
     if (axis == 'file')
         return move[toFrom].substr(0, 1);
-}}
+}

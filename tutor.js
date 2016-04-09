@@ -32,7 +32,6 @@ var onReady = function (moves) {
         toggleCheck(false);
         return;
     };
-<<<<<<< HEAD
     
     //If moving towards the center and not taking
     var file = getPart(moves[moves.length - 1], 'to', 'file');
@@ -46,12 +45,6 @@ var onReady = function (moves) {
     }
     
     beginOutput('Im not sure what is going on here');
-=======
-
-    //If it can't work out anything to say
-    beginOutput(buildSentence(['Do what you like', 'This one is up to you', 'Do what you think is best', 'I\'ve got nothing specific right now']));
-    //beginOutput('RESPONSE NOT FORMULATED');
->>>>>>> origin/master
 };
 
 var movePlus = function () {
@@ -63,14 +56,13 @@ function buildSentence(sentenceArray, targetPiece) {
     //Select a random sentence structure
     var suggestion = sentenceArray[Math.floor((Math.random() * (sentenceArray.length - 1)) + 0)];
     //Add contextual information to the string
-    //If '&p1' is not found, a random string will be still be returned from the array
     suggestion = suggestion.replace('&p1', targetPiece);
     return suggestion;
 };
 
 function beginOutput(response) {
-    //80ms per letter
-    var typeTime = response.length * 80;
+    //40ms per letter
+    var typeTime = response.length * 40;
     if (typeTime < 1500) {
         typeTime = 1500;
     }
@@ -150,34 +142,34 @@ function response_startMove() {
     var sentences = [
         "In the opening, you want to try and maximise your influence on the center of the board."
 
-
+        
         , "You should try and get pieces off the back row to try and control the center of the board."
 
-
+        
         , "You may want to start by moving either a pawn or a knight towards the middle of the board."
 
-
+        
         , "There are only two pieces you can move in the beginning, the knight or the pawn."
 
-
+        
         , "Controlling the center of the board is critical in the opening moves to give you a more secure mid-game."
 
-
+        
         , "Try to attack middle squares with your pieces, this will secure you with a better middle game."
 
-
+        
         , "The more influence you have on the center of the board, the more you restrict your opponent's moves."
 
-
+        
         , "Each piece has its highest possible range of candidate moves in the center of the board. You should aim to have them there."
 
-
+        
         , "It is easier to secure checks if you have your pieces securely rooted in the center of the board."
 
-
+        
         , "You should aim to hold control of the King's and Queen's files 'D' and 'E' during the opening."]
 
-    return sentences[Math.floor((Math.random() * 9) + 0)];
+    return sentences[Math.floor((Math.random() * 9) + 0)]
 };
 
 function response_check(moves) {
@@ -198,92 +190,30 @@ function response_check(moves) {
 
     var suggestions = ['Moving &p1 will prevent check'
 
-
+        
         , 'You can stop check by moving your &p1'
 
-
+        
         , 'The best move to get out of check involves your &p1 '
 
-
+        
         , 'You may move your &p1'
 
-
+        
         , 'Your best bet is to move the &p1'
 
-
-        , 'Try moving your &p1 to remove check'
-
-
-        , 'To get out of check move your &p1'
-
-
-        , 'Think about moving &p1 to stop check'
-
-
-        , 'You need to move your &p1 to protect your King'
-
-
-        , 'You\'re going to lose if you don\'t move your &p1 to stop check'
-
-
-        , 'You\' in a bad spot, prevent check with your &p1'
-
-
-        , 'You\'re going to lose if you don\' get out of check using your &p1'
-
-
-        , 'I\'d move your &p1 to get out of check'
-
-
-        , 'I\'m thinking you should move your &p1 to protect the King'
-
-
-        , 'This isn\'t good, you need to get out of check with your &p1'];
+        
+        , 'Try moving your &p1 to remove check'];
 
     return buildSentence(suggestions, responseString);
 
 };
 
-<<<<<<< HEAD
 function response_canTake(moves, possibleTakes) {
     var suggestions = ['You can take their &p1'        
         , 'Consider taking their &p1'];
     
     //When you can take only 1 piece, suggest what to take with
-=======
-function response_canTake(possibleTakes) {
-    var suggestions = ['You can take their &p1'
-
-
-        , 'Consider taking their &p1'
-
-
-        , 'I\'d probably take their &p1'
-
-
-        , 'Probably go for their &p1'
-
-
-        , 'I\'m thinking you should take their &p1'
-
-
-        , 'Take their &p1, I think'
-
-
-        , 'Maybe go for their &p1'
-
-
-        , 'The best thing you can do here is take their &p1'
-
-
-        , 'Definitely go for their &p1'
-
-
-        , 'Your best bet is to take their &p1'
-
-        , 'Their &p1 needs to go'];
-    //Deal with multiple piece selections
->>>>>>> origin/master
     if (possibleTakes.length == 1) {
         var pieceToTake = 'UNDEFINED';
         var pieceTakeWith = 'UNDEFINED';

@@ -15,13 +15,13 @@ var onReady = function (moves) {
     //if you can take a piece
     var possibleTakes = getCandidates('taken', moves);
     if (possibleTakes.length > 0) {
-        beginOutput(response_canTake(possibleTakes));
+        beginOutput(response_canTake(moves, possibleTakes));
         return;
     }
 
     //If the move is to develop a piece, and it is in the early game
     var element = getPart(moves[moves.length - 1], 'from', 'rank');
-    if ((moveCount < 8) && ((element == '1') && getPlayerSide() == 'w') || ((element == '8') && getPlayerSide() == 'b')) {
+    if ((moveCount < 8) && ((element == '1') && playerSide == 'w') || ((element == '8') && playerSide == 'b')) {
         beginOutput(buildSentence(['Move a &p1 off the back row.', 'Develop a &p1 off of the back rank', 'You should get a &p1 into the battle'], moves[moves.length - 1]['piece']));
         return;
     }
@@ -32,8 +32,19 @@ var onReady = function (moves) {
         toggleCheck(false);
         return;
     };
-
-    beginOutput('RESPONSE NOT FORMULATED');
+    
+    //If moving towards the center and not taking
+    var file = getPart(moves[moves.length - 1], 'to', 'file');
+    if ((3 <= (getPart(moves[moves.length - 1], 'to', 'rank')) <= 6) && ( (file == 'c') || (file == 'd') || (file == 'e') || (file == 'f'))) {
+        beginOutput('Move to the center lad');
+        var starters = ['Move your ', 'Advance your ', 'Push forward your '];
+        var enders = [' towards the center', ' onto the center squares ', ' to gain control over the center', ' to the middle', ' to the middle squares'];
+        var response = starters[Math.floor((Math.random() * 2) + 0)] + moves[moves.length - 1]['piece'] + enders[Math.floor((Math.random() * 4) + 0)];
+        beginOutput(response);
+        return;
+    }
+    
+    beginOutput('Im not sure what is going on here');
 };
 
 var movePlus = function () {
@@ -198,14 +209,29 @@ function response_check(moves) {
 
 };
 
-function response_canTake(possibleTakes) {
-    var suggestions = ['You can take their &p1'
-
-        
+function response_canTake(moves, possibleTakes) {
+    var suggestions = ['You can take their &p1'        
         , 'Consider taking their &p1'];
-    //Deal with multiple piece selections
+    
+    //When you can take only 1 piece, suggest what to take with
     if (possibleTakes.length == 1) {
-        return buildSentence(suggestions, possibleTakes[0]);
+        var pieceToTake = 'UNDEFINED';
+        var pieceTakeWith = 'UNDEFINED';
+        
+        var starters = ['Take their ', 'You can take a ', 'You may take their ', 'Capture the '];
+        var enders = [' with a ', ' using a ', ' by moving a ', ' by changing the position of a '];
+        
+        for (i = 0; i < moves.length; i++)
+            {
+                
+                if (moves[i]['taken'] != 'NONE'){
+                    return starters[Math.floor((Math.random() * 3) + 0)] + moves[i]['taken'] + enders[Math.floor((Math.random() * 3) + 0)] + moves[i]['piece'];
+                }
+            }
+        
+        
+                
+    //Deal with multiple piece selections
     } else if (possibleTakes.length >= 2) {
         var endofSuggestion = possibleTakes[0] + " or " + possibleTakes[1] + ".";
         if (possibleTakes.length > 2) {
@@ -216,7 +242,6 @@ function response_canTake(possibleTakes) {
         console.log(endofSuggestion);
         return buildSentence(suggestions, endofSuggestion);
     }
-
 };
 
 function getCandidates(attribute, moves) {

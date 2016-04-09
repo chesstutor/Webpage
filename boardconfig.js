@@ -5,7 +5,7 @@
 moveNumber = 0;
 playerTurn = true;
 engine = new Worker('stockfish.js');
-playerSide = '';
+playerSide = 'b';
 var engineMessages = [""];
 var depthResults = [""];
 
@@ -176,6 +176,10 @@ var makeRandomMove = function() {
 function start(side){
     playerSide = side;
     playerTurn = (playerSide == 'w') ? true : false;
+    
+    var tutorNames = ['Grigor Cruz', 'Petr Mendelev', 'Wang Yi', 'Sergey Deshun', 'Magners Ciderson', 'Sebastian Crowler', 'David Manson', 'Ryan Hill', 'Jakeson Bramberly'];
+    
+    //document.getElementById("name").innerHTML = tutorNames[Math.floor((Math.random() * 8) + 0)];
     init();
 };
 

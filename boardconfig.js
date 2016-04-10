@@ -126,45 +126,16 @@ var makeRandomMove = function() {
         // checkmate?
         if (game.in_checkmate() === true) {
             status = 'Game over, ' + moveColor + ' is in checkmate.';
-			if (playerTurn === true)
-			{
-				status = status + ' You\'ve heeded my advice well!';
-				
-				var typeTime = status.length * 60;
-				document.getElementById("typing").innerHTML = "Typing...";
-				//Time for typing
-				setTimeout(function() {
-					document.getElementById("response").innerHTML = status;
-					var d = new Date();
-					document.getElementById("typing").innerHTML = "Last message recieved at " + d.toLocaleTimeString();
-				}, typeTime);
-				
-				//document.getElementById("response").innerHTML = status;
-			}
-			else
-			{
-				status = status + ' Maybe follow my advice a bit more, huh?';
-				
-				var typeTime = status.length * 60;
-				document.getElementById("typing").innerHTML = "Typing...";
-				//Time for typing
-				setTimeout(function() {
-					document.getElementById("response").innerHTML = status;
-					var d = new Date();
-					document.getElementById("typing").innerHTML = "Last message recieved at " + d.toLocaleTimeString();
-				}, typeTime);
-				
-				
-				
-				//document.getElementById("response").innerHTML = status;
-			}
 			
+			response_endgameCM();
+		
         }
 
         // draw?
         else if (game.in_draw() === true) {
             status = 'Game over, drawn position';
-			document.getElementById("response").innerHTML = 'Your game has ended in a draw';
+			
+			response_endgameD();
         }
 
         // game still on

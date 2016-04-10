@@ -343,3 +343,31 @@ function getPart(move, toFrom, axis) {
     if (axis == 'file')
         return move[toFrom].substr(0, 1);
 }
+
+
+// Function to output an end-game response for checkmates (both for and against player)
+function response_endgameCM()
+{
+	if (playerTurn === true)
+			{
+				response = 'Congratulations, you are victorious! You\'ve heeded my advice well!';
+				
+				beginOutput(response);
+			}
+			else
+			{
+				response = 'Commiserations, you have lost unfortunately. Hope my advice didn\'t lead you astray.';
+				
+				beginOutput(response);
+			}
+}
+
+
+// Function to output an end-game response in a draw scenario
+function response_endgameD()
+{
+	response = 'Looks like a draw. Try to be careful of stalemates next time.';
+	
+	beginOutput(response);
+}
+

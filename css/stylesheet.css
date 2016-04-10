@@ -78,7 +78,7 @@ a:hover {
 .button2:hover {
 	color: #fff;
 	background: #08A842;
-	border: 1px solid #08A842;
+	border: 1px solid #08A842 !important;
 }
 
 .buttonText {
@@ -166,6 +166,8 @@ a:hover {
 
 .footerNav {
 	display: inline-block;
+	position: relative;
+	left: -21px;
 }
 
 .footerNav li {
@@ -212,7 +214,8 @@ a:hover {
 	margin-left: 12px;
 }
 
-.headerBanner {
+
+.headerBanner#bannerIndex {
 	background: url(../img/background_banner2.jpg) no-repeat center;
 	background-size: cover;
 	overflow: hidden;
@@ -223,7 +226,19 @@ a:hover {
 	padding: 0;
 	top: 116px;
 	text-align: center;
+}
 
+.headerBanner#bannerPlay {
+	background: url(../img/background_banner3.jpg) no-repeat center;
+	background-size: cover;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	min-height: 511px;
+	margin: 0 auto;
+	padding: 0;
+	top: 116px;
+	text-align: center;
 }
 
 .bannerItems {
@@ -275,6 +290,7 @@ a:hover {
 	line-height: 1.3em;
 	font-size: 25px;
 	margin: 0 0 20px 0;
+	text-transform: none;
 }
 
 .textSection a {
@@ -303,7 +319,8 @@ footer {
 footer p {
 	font-size: 17px;
 	font-family: 'Josefin Sans', sans-serif;
-	margin: 0 auto;
+	margin: 0px auto;
+	width: 580px;
 }
 
 /* Homepage box section */
@@ -395,28 +412,27 @@ footer p {
 }
 
 
- #ChessWrap {
-    height: 500px ; 
+ #chessWrap {
+    height: 600px ; 
 }
 
 .SectionChessClass {
     text-align: center;
-    width: 1104px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 50px;
-    height: 404px;
-    padding-bottom: 47px;
+	width: 1104px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
 }
 
-.chessSection #board {
+#board {
     position: relative;
 	left: 241px;
 }
 
-.chessSection {
-    height: 450px;
+#chessSection {
+	height: 397px;
 }
+
 
 /* Homebage box section finish */
 
@@ -458,7 +474,7 @@ footer p {
 }
 
 #boardUI {
-    background: #809867 none repeat scroll 0% 0%;
+    background: #5C2A21 none repeat scroll 0% 0%;
 	border: 2px solid #222;
 	width: 250px;
 	position: relative;
@@ -470,7 +486,7 @@ footer p {
 }
 
 #boardUIText {
-    background-color: #F1E8CA;
+    background-color: #F6B983;
     width: 235px;
     position: relative;
     left: 5px;
@@ -519,7 +535,7 @@ p#typing {
 }
 
 #chessTitle {
-    color: #F1E8CA;
+    color: #F6B983;
     font-size: 34px;
     letter-spacing: 0.1em;
     margin-bottom: 5px;
@@ -527,7 +543,7 @@ p#typing {
 }
 
 #chessChatText {
-    color: #F1E8CA;
+    color: #F6B983;
     font-size: 19px;
     letter-spacing: 0.1em;
 }
@@ -555,19 +571,28 @@ p#typing {
     
 }
 
-.black-3c85d {
-    background-color: #809867 !important;
+#chessWrap h3 {
+	text-transform: uppercase;
+	font-family: 'Josefin Sans', sans-serif;
+	color: #222;
+	font-size: 32px;
+	margin: 20px 0px 0px 0px;
 }
 
-.white-1e1d7 {
-    background-color: #F1E8CA !important;
+#chessWrap h4 {
+	color: #555;
+	font-family: 'Josefin Sans', sans-serif;
+	line-height: 1.3em;
+	font-size: 27px;
+	margin: 5px 0px 20px 0px;
+	padding: 0 155px;
 }
 
 #chromeError {
 	visibility: hidden;
 }
 
-/* ===== ERROR HANDLING FOR GOOGLE CHROME (BOARD NOT VISIBLE IN CHROME FOR UNKNOWN REASON) ===== */
+/* ============= ERROR HANDLING FOR GOOGLE CHROME (BOARD NOT VISIBLE IN CHROME FOR UNKNOWN REASON) ============= */
 
 @media screen and (-webkit-min-device-pixel-ratio:0)
   and (min-resolution:.001dpcm) {
@@ -597,4 +622,22 @@ p#typing {
     }
 }
 
-/* ===================================END OF ERROR HANDLING FOR CHROME ========================= */
+#backgroundShadow {
+	background: rgba(54, 25, 25, .5);
+	width: 668px;
+	margin: 0 auto;
+	margin-bottom: 32px;
+}
+
+#buttonShadow {
+	background: rgba(54, 25, 25, .5);
+}
+
+#buttonShadow:hover {
+	color: #fff;
+	background: #08A842;
+	border: 1px solid #08A842 !important;
+}
+
+
+/* ===================================END OF ERROR HANDLING FOR CHROME LOLOL  over 600 lines of CSS========================= */

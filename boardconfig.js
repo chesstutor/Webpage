@@ -126,11 +126,13 @@ var makeRandomMove = function() {
         // checkmate?
         if (game.in_checkmate() === true) {
             status = 'Game over, ' + moveColor + ' is in checkmate.';
+			document.getElementById("response").innerHTML = status;
         }
 
         // draw?
         else if (game.in_draw() === true) {
             status = 'Game over, drawn position';
+			document.getElementById("response").innerHTML = status;
         }
 
         // game still on
@@ -179,7 +181,7 @@ function start(side){
     
     var tutorNames = ['Grigor Cruz', 'Petr Mendelev', 'Wang Yi', 'Sergey Deshun', 'Magners Ciderson', 'Sebastian Crowler', 'David Manson', 'Ryan Hill', 'Jakeson Bramberly'];
     
-    //document.getElementById("name").innerHTML = tutorNames[Math.floor((Math.random() * 8) + 0)];
+    document.getElementById("name").innerHTML = tutorNames[Math.floor((Math.random() * 8) + 0)];
     init();
 };
 
@@ -279,3 +281,4 @@ function printMoves() {
 function getMoves() {
     return moves;
 };
+

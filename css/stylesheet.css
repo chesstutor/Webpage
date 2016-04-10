@@ -563,3 +563,38 @@ p#typing {
     background-color: #F1E8CA !important;
 }
 
+#chromeError {
+	visibility: hidden;
+}
+
+/* ===== ERROR HANDLING FOR GOOGLE CHROME (BOARD NOT VISIBLE IN CHROME FOR UNKNOWN REASON) ===== */
+
+@media screen and (-webkit-min-device-pixel-ratio:0)
+  and (min-resolution:.001dpcm) {
+    #boardUI{
+    	bottom:0;
+    	left: 651px;
+    } 
+    #board {
+    	width: 400px;
+    	background: #809867;
+    	height: 392px;
+    	border: 2px solid #222 !important;
+    }
+
+    .chromeError {
+    	visibility: visible;
+    }
+
+    .chromeError h1 {
+    	position: absolute;
+	    top: 37%;
+	    color: #F1E8CA;
+	    font-size: 34px;
+	    letter-spacing: 0.1em;
+	    margin-bottom: 5px;
+	    margin-top: 0px;
+    }
+}
+
+/* ===================================END OF ERROR HANDLING FOR CHROME ========================= */

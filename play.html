@@ -72,14 +72,43 @@
 		                        <div id="boardUI">                            
 		                            <h5 id="chessTitle" class="chessText" >Chess Tutor</h5>                         
 		                            <h6 id="chessChatText" class="chessText">Chat Log</h6>
-		                            <img src="img/profile.jpg" alt="User" id="userImage"/>
+		                            <img src="img/profile8.jpg" alt="User" id="userImage"/>
 		                            <div id="boardUIText">
 		                                <img src="img/online.png" id="playerOnline" alt="player online"/>
 		                                <p id="chessUser">ChessTutor: <span id="name">Dave the doughnut</span></p>
 		                                <p id="response"></p> <!-- Response text e.g. the message from the user     --> 
-
-		                                
 		                                <p id="typing"></p>  <!-- The typing sprite - shows that the user is typing -->
+			                                <script>
+			                                		var image = document.getElementById('userImage');
+			                                		var imageNo = Math.floor(Math.random() * (8 - 0 + 1)) + 0;
+			                                		switch (imageNo) {
+													    case 1:
+													       	image.src = "img/profile8.jpg";
+													        break;
+													    case 2:
+													        image.src = "img/profile1.jpg";
+													        break;
+													    case 3:
+													        image.src = "img/profile2.jpg";
+													        break;
+													    case 4:
+													        image.src = "img/profile3.jpg";
+													        break;
+													    case 5:
+													        image.src = "img/profile4.jpg";
+													        break;
+													    case 6:
+													        image.src = "img/profile5.jpg";
+													        break;
+													    case 7:
+													    	image.src = "img/profile6.png";
+													    	break;
+													    case 8:
+													    	image.src = "img/profile7.jpg";
+													    	break;
+													    }
+			                                	
+			                                </script>
 		                            </div>
 		                        </div>      
 	                    </div>     

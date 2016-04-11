@@ -413,7 +413,7 @@ footer p {
 
 
  #chessWrap {
-    height: 600px ; 
+    height: 880px;
 }
 
 .SectionChessClass {
@@ -426,11 +426,13 @@ footer p {
 
 #board {
     position: relative;
-	left: 241px;
+	left: 93px;
+	width: 600px !important;
+	height: 600px !important;
 }
 
 #chessSection {
-	height: 397px;
+	height: 605px;
 }
 
 
@@ -474,25 +476,25 @@ footer p {
 }
 
 #boardUI {
-    background: #5C2A21 none repeat scroll 0% 0%;
+   	background: #5C2A21 none repeat scroll 0% 0%;
 	border: 2px solid #222;
-	width: 250px;
+	width: 300px;
 	position: relative;
-	top: -396px;
-	left: 641px;
+	bottom: 600px;
+	left: 698px;
 	margin: 0px;
 	padding: 0px;
-	height: 392px;
+	height: 592px;
 }
 
 #boardUIText {
     background-color: #F6B983;
-    width: 235px;
-    position: relative;
-    left: 5px;
-    height: 266px;
-    border: 2px solid #222;
-    bottom: 0px;
+	width: 285px;
+	position: relative;
+	left: 5px;
+	height: 335px;
+	border: 2px solid #222;
+	bottom: 16px;
 }
 
 p#response {
@@ -508,17 +510,28 @@ p#response {
     font-size: 19px;
 }
 
+#userImage {
+	width: 206px;
+	padding: 12px;
+	border: 2px solid rgb(34, 34, 34);
+	background-color: rgb(246, 185, 131);
+	margin: 0px 0px 21px;
+	position: relative;
+	top: 3px;
+}
+
 p#typing {
     font-family: "Open Sans",sans-serif;
-    color: #222;
-    height: 21px;
-    margin: 0px;
-    top: 36px;
-    font-size: 14px;
-    padding-left: 6px;
-    padding-right: 6px;
-    text-align: left;
-    border-top: 2px solid #222;
+	color: #222;
+	height: 21px;
+	margin: 0px;
+	top: 84px;
+	font-size: 14px;
+	padding-left: 6px;
+	padding-right: 6px;
+	text-align: left;
+	border-top: 2px solid #222;
+	position: relative;
 }
 
 .board-b72b1 {
@@ -571,6 +584,11 @@ p#typing {
     
 }
 
+.chessboard-63f37 {
+	width: 600px;
+	height: 600px;
+}
+
 #chessWrap h3 {
 	text-transform: uppercase;
 	font-family: 'Josefin Sans', sans-serif;
@@ -602,7 +620,7 @@ p#typing {
     } 
     #board {
     	width: 400px;
-    	background: #809867;
+    	background: #5C2A21;
     	height: 392px;
     	border: 2px solid #222 !important;
     }
@@ -614,7 +632,7 @@ p#typing {
     .chromeError h1 {
     	position: absolute;
 	    top: 37%;
-	    color: #F1E8CA;
+	    color: #F6B983;
 	    font-size: 34px;
 	    letter-spacing: 0.1em;
 	    margin-bottom: 5px;

@@ -182,10 +182,49 @@ function start(side){
     playerSide = side;
     playerTurn = (playerSide == 'w') ? true : false;
     
-    var tutorNames = ['Grigor Cruz', 'Petr Mendelev', 'Wang Yi', 'Sergey Deshun', 'Magners Ciderson', 'Sebastian Crowler', 'David Manson', 'Ryan Hill', 'Jakeson Bramberly'];
-    
-    document.getElementById("name").innerHTML = tutorNames[Math.floor((Math.random() * 8) + 0)];
-    init();
+    var tutorNames = ['Grigor Cruz', 'Jakeson Bramberly', 'Wang Yi', 'Sergey Deshun', 'Magners Ciderson', 'Sebastian Crowler', 'Lucy Thompson', 'Pat Smith'];
+    var imageNo = Math.floor(Math.random() * (8 - 0 + 1)) + 0;
+
+    if (imageNo == 0)
+    {
+        imageNo = 1;
+        //this is to fix the random number error (from getting a 0)
+    }
+
+    document.getElementById("name").innerHTML = tutorNames[imageNo - 1];
+    var image = document.getElementById('userImage');
+                                                    
+        switch (imageNo) {
+            case 1:
+                image.src = "img/profilepic1.jpg";
+                break;
+            case 2:
+                image.src = "img/profilepic2.jpg";
+                break;
+            case 3:
+                image.src = "img/profilepic3.jpg";
+                break;
+            case 4:
+                image.src = "img/profilepic4.png";
+                break;
+            case 5:
+                image.src = "img/profilepic5.jpg";
+                break;
+            case 6:
+                image.src = "img/profilepic6.jpg";
+                break;
+            case 7:
+                image.src = "img/profilepic7.png";
+                break;
+            case 8:
+                image.src = "img/profilepic8.jpg";
+                break;
+            default: 
+                image.src="img/board-background.png";
+                break;
+
+            }
+        init();
 };
 
 //Move data object template

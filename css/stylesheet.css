@@ -9,6 +9,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 @import url(https://fonts.googleapis.com/css?family=Palanquin+Dark);
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,700);
+@import url(https://fonts.googleapis.com/css?family=Bad+Script);
 
 *:hover {
 	transition: all 0.3s ease 0s;
@@ -240,6 +241,35 @@ a:hover {
 	top: 116px;
 	text-align: center;
 }
+
+.headerBanner#bannerAbout {
+	background: url(../img/background_banner5.jpg) no-repeat center;
+	background-size: cover;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	min-height: 511px;
+	margin: 0 auto;
+	padding: 0;
+	top: 116px;
+	text-align: center;
+}
+
+.headerBanner#bannerContact{
+	background: url(../img/background_banner4.jpg) no-repeat center;
+	background-size: cover;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	min-height: 511px;
+	margin: 0 auto;
+	padding: 0;
+	top: 116px;
+	text-align: center;
+}
+
+
+
 
 .bannerItems {
 	position: absolute;
@@ -512,6 +542,7 @@ p#response {
 
 #userImage {
 	width: 206px;
+	height: 137px;
 	padding: 12px;
 	border: 2px solid rgb(34, 34, 34);
 	background-color: rgb(246, 185, 131);
@@ -615,8 +646,9 @@ p#typing {
 @media screen and (-webkit-min-device-pixel-ratio:0)
   and (min-resolution:.001dpcm) {
     #boardUI{
-    	bottom:0;
-    	left: 651px;
+	    bottom: 604px;
+	   	left: 702px;
+	   	height: 601px;
     } 
     #board {
     	width: 400px;
@@ -657,5 +689,100 @@ p#typing {
 	border: 1px solid #08A842 !important;
 }
 
+#textWrap {
+	text-align:left;
+	margin: 0 auto;
+}
+
+#textWrapInner {
+	width: 900px;
+	margin: 0 auto;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+#textWrapInner h3{
+    color: #222;
+	font-family: 'Josefin Sans', sans-serif;
+	line-height: 1.3em;
+	font-size: 25px;
+	margin: 0 0 20px 0;
+	text-transform: uppercase;
+	text-align: left;
+}
+
+#textWrapInner p {
+	text-align: left;
+	color: #222;
+	font-size: 19px;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.contactForm legend {
+	color: #222;
+	font-family: 'Josefin Sans', sans-serif;
+	line-height: 1.3em;
+	font-size: 18px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#textWrapInner q {
+	font-family: 'Bad Script', cursive;
+	font-size: 20px;
+	color: #08A842;
+}
+
+#textWrapInner #nameQuote {
+	display:inline-block;
+	margin-left: 5px;
+
+}.contactForm textarea {
+    resize: none;
+}
+
+.contactForm fieldset {
+	border: 2px solid rgb(51, 51, 51);
+	height: 400px;
+	width: 550px;
+	margin: 0 auto;
+	text-align: center
+}
+
+.contactForm h3 {
+	text-align: center !important;
+}
+
+.contactForm p {
+	display: inline-block;
+	font-family: 'Open Sans', sans-serif;
+	color: #222;
+	font-size: 17px;
+	text-align: center;
+	font-weight: bold;
+}
+
+#submitButton {
+	color: #29221f;
+	border: 1px solid #000;
+	text-transform: uppercase;
+	font-size: 12px;
+	text-align: center;
+	padding: 8px 15px 8px 15px;
+	margin-top:0px;
+	height: 35px;
+	letter-spacing: 1.2px;
+	text-transform: uppercase;
+	font-weight: 700;
+	transition: all 0.3s ease 0s;
+	margin-top:11px;
+	background-color: #fff
+}
+
+#submitButton:hover {
+	color: #fff;
+	background: #08A842;
+	border: 1px solid #08A842;
+}
 
 /* ===================================END OF ERROR HANDLING FOR CHROME LOLOL  over 600 lines of CSS========================= */

@@ -5,14 +5,14 @@
 moveNumber = 0;
 playerTurn = true;
 engine = new Worker('stockfish.js');
-playerSide = 'b';
+playerSide = 'w';
 var engineMessages = [""];
 var depthResults = [""];
 
 var moves = [new moveData("", "", "", "")];
 
 $(document).ready(function () {
-    start('b');
+    start('w');
 });
 
 var init = function () {
@@ -32,17 +32,27 @@ var init = function () {
         }
     };
 
-	//Making black choose a random legal move to make
-var makeRandomMove = function() {
-  var possibleMoves = game.moves();
+	if(start == 'b')
+	{
+		bestOpponentMove();	//Calculate a move for the opponent
+	}
+	
+	//Function for performing the opponent's moves
+	formatOpponentResults = function() {
+		if (engineMessages[0] != null) {
+            depthResults.push(engineMessages[0].split("\u0020")[1]);	//engineMessages[i]; i can be changed to skill level variable
+        }
+	
+    moves = [];
+    engineMessages = [];
+	var move = depthResults[0].split("");	//Split up the move into character array
+	var moveFrom = (move[0] + move[1]);	//Get move from
+	var moveTo = (move[2] + move[3]);	//Get position to move to
 
-  // game over
-  if (possibleMoves.length === 0) return;
+    	game.move({from: moveFrom, to: moveTo});	//Make move
 
-  var randomIndex = Math.floor(Math.random() * possibleMoves.length);
-  game.move(possibleMoves[randomIndex]);
-  board1.position(game.fen());
-  updateStatus();
+	board1.position(game.fen());
+	updateStatus();			//Update board
 };
 	
     var removeGreySquares = function () {
@@ -76,12 +86,11 @@ var makeRandomMove = function() {
             board1.position(game.fen());
         };
 		updateStatus();
-           
-        
-        
-        
-            if (playerTurn == false)
-                window.setTimeout(makeRandomMove, 250);    //Computer makes random move for the opponent
+
+		if(!playerTurn)	//If it's the opponent's move
+		{
+			bestOpponentMove();	//Calculate a move for the opponent
+		}		
     };
 
     var onMouseoverSquare = function (square, piece) {
@@ -244,21 +253,46 @@ function bestMove() {
 
 };
 
+function bestOpponentMove() {
+    depthResults = [];
+    engineMessages = [];
+	if(playerSide == 'w')
+	{
+		engine.postMessage('position fen ' + board1.fen() + " b");
+	}
+	else
+	{
+		engine.postMessage('position fen ' + board1.fen() + " b");
+	}
+	
+	//Wait for 3 seconds before beginning to make opponent's move
+	setTimeout(function() {
+		engine.postMessage('go movetime 10');	//Search for a number of miliseconds
+	}, 3000);
+};
+
 //Message from the engine
 engine.onmessage = function (event) {
-    //Only advise on white's turn
-    if (playerTurn) {
-        //When the engine outputs 'bestmove' the search has finished
-        if (String(event.data).substring(0, 8) == 'bestmove') {
-            console.log('FINISHED');
-            formatResults();
-            //Initialise the tutor
-            onReady(moves);
-        } else {
-            engineMessages.push(String(event.data).split(' pv')[1]);
+    //Only advise on player's turn
 
-        }
-    };
+        //When the engine outputs 'bestmove' the search has finished
+        if (String(event.data).substring(0, 8) == 'bestmove') 
+		{
+			if (playerTurn)
+			{
+				console.log('FINISHED');
+				formatResults();
+				onReady(moves);            //Initialise the tutor
+			} 
+			else 
+			{
+				formatOpponentResults();
+			}            
+        } 
+		else 
+		{
+            engineMessages.push(String(event.data).split(' pv')[1]);
+		}
 };
 
 //When the engine has finished outputting

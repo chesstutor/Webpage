@@ -785,4 +785,101 @@ p#typing {
 	border: 1px solid #08A842;
 }
 
-/* ===================================END OF ERROR HANDLING FOR CHROME LOLOL  over 600 lines of CSS========================= */
+#sideSelect {
+	width: 905px;
+	background: #5C2A21;
+	height: 592px;
+	border: 2px solid #222 !important;
+	position: absolute;
+	z-index: 1;
+	left: 460px;
+	top: 136px;
+}
+
+#sideSelect_inner {
+	width: 905px;
+	background: #F6B983;
+	height: 592px;
+	border: 2px solid #222 !important;
+	position: absolute;
+	z-index: 2;
+	left: 460px;
+	top: 136px;
+}
+
+#sideSelect h1 {
+	color: #5C2A21;
+	font-size: 54px;
+	text-transform: uppercase;
+	font-family: 'Josefin Sans', sans-serif;
+	letter-spacing: 0.1em;
+	margin-bottom: 140px;
+	margin-top: 50px;
+}
+
+#sideSelect_inner {
+	width: 880px;
+	background: #F6B983;
+	height: 568px;
+	border: 2px solid #222 !important;
+	position: relative;
+	z-index: 2;
+	left: 10px;
+	top: 9px;
+}
+
+#sideSelect_inner .button2{
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.7em;
+	text-align: center;
+	line-height: 36px;
+	padding: 4px 15px 4px 15px;
+	height: 35px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: all 0.3s ease 0s;
+	margin: 10px;
+}
+
+#whiteButton {
+	color: #fff;
+	border: 1px solid #fff;
+}
+
+#blackButton {
+	color: #000 !important;
+	border: 1px solid #000;
+}
+
+#blackButton:hover {
+	border: 1px solid #08A842;
+}
+
+#sideSelect_inner img {
+	width: 52px;
+	height: 100px;
+	position: relative;
+	top: 250px;
+}
+
+#sideSelect_inner #kingWhitePiece {
+	right: 46px;
+}
+
+#sideSelect_inner #kingBlackPiece {
+	left: 46px;
+}
+
+
+
+#board, #boardUI {
+	visibility: hidden;
+}
+
+#sideSelect .button2:active {
+		visibility: visible;
+	 
+}
+
+/* =================================== over 885 lines of CSS...well ....========================= */

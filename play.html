@@ -68,7 +68,30 @@
 					<h3>Play Chess Tutor</h3>
 					<h4>Chess Tutor is a fantastic place to play chess, whether you are a beginner looking to learn chess, or advanced, looking to test your skills</h4>
 						<div id="chessSection">
-						    <div id="board" style="width: 400px"><span class="chromeError"><h1>ERROR: PLEASE OPEN IN FIREFOX</h1></span></div>
+
+									<div id="sideSelect"> <!-- THIS IS THE FULL CONTAINER TO HIDE THE CHESS BOARD AND UI -->
+
+										<div id="sideSelect_inner"> <!-- INNER SECTION FOR POSITIONING AND OTHER STUFF -->
+
+											<img src="img/kingPieceWhite.png" id="kingWhitePiece" alt="White Piece" />
+
+											<img src="img/kingPieceBlack.png" id="kingBlackPiece" alt="Black Piece" />
+
+						    			<h1>Choose your side</h1>
+
+						    			<a href="about.html" class="button2" id="whiteButton">White</a>
+										<a href="contact.html" class="button2" id="blackButton">Black</a>
+
+										</div>
+
+						    		</div>
+						    <div id="board" style="width: 400px"> <!-- MAIN BOARD CONTENT IS IN THIS #board ID -->
+
+						    		<span class="chromeError"> <!-- ERROR HANDLING FOR CHROME -->
+						    		<h1>ERROR: PLEASE OPEN IN FIREFOX</h1>
+						    		</span> <!-- ERROR HANDLING FOR CHROME -->
+						    </div> 
+
 		                        <div id="boardUI">                            
 		                            <h5 id="chessTitle" class="chessText" >Chess Tutor</h5>                         
 		                            <h6 id="chessChatText" class="chessText">Chat Log</h6>

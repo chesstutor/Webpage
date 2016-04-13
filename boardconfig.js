@@ -289,7 +289,7 @@ function bestOpponentMove() {
 	
 	//Wait for 3 seconds before beginning to make opponent's move
 	setTimeout(function() {
-		engine.postMessage('go movetime 1');	//Search for a number of miliseconds
+		engine.postMessage('go movetime 3');	//Search for a number of miliseconds
 	}, 3000);
 };
 

@@ -43,8 +43,8 @@ var onReady = function (moves) {
         beginOutput(response);
         return;
     }
-
-    beginOutput('Im not sure what is going on here');
+    
+    beginOutput('Seat a piece in ' + moves[moves.length - 1]['to'] + ', maybe your ' + moves[moves.length - 1]['piece']);
 };
 
 var movePlus = function () {
@@ -61,14 +61,19 @@ function buildSentence(sentenceArray, targetPiece) {
 };
 
 function beginOutput(response) {
-    //40ms per letter
-    var typeTime = response.length * 40;
+    
+    //Wait before typing
+    setTimeout(function(){
+         //40ms per letter
+    var typeTime = response.length * 50;
     if (typeTime < 1500) {
         typeTime = 1500;
     }
     document.getElementById("typing").innerHTML = "Typing...";
     //Time for typing
     setTimeout(pushResponse, typeTime, response);
+    }, 2000)
+   
 };
 
 function toggleCheck(value) {

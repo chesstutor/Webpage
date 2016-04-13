@@ -265,6 +265,7 @@ function moveData(squareFrom, squareTo, movingPiece, takenPiece) {
     this.piece = movingPiece;
     this.taken = takenPiece;
 }
+ 
 
 //Query the engine
 function bestMove() {

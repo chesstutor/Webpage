@@ -36,7 +36,7 @@ var onReady = function (moves) {
     //If moving towards the center and not taking
     var file = getPart(moves[moves.length - 1], 'to', 'file');
     if ((3 <= (getPart(moves[moves.length - 1], 'to', 'rank')) <= 6) && ( (file == 'c') || (file == 'd') || (file == 'e') || (file == 'f'))) {
-        beginOutput('Move to the center lad');
+        
         var starters = ['Move your ', 'Advance your ', 'Push forward your '];
         var enders = [' towards the center', ' onto the center squares ', ' to gain control over the center', ' to the middle', ' to the middle squares'];
         var response = starters[Math.floor((Math.random() * 2) + 0)] + moves[moves.length - 1]['piece'] + enders[Math.floor((Math.random() * 4) + 0)];

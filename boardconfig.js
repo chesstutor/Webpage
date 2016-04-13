@@ -5,14 +5,16 @@
 moveNumber = 0;
 playerTurn = true;
 engine = new Worker('stockfish.js');
-playerSide = 'w';
+playerSide = 'b';
 var engineMessages = [""];
 var depthResults = [""];
 
 var moves = [new moveData("", "", "", "")];
 
 $(document).ready(function () {
-    start('w');
+    
+    
+    //start('w');
 });
 
 var init = function () {
@@ -31,28 +33,30 @@ var init = function () {
             return false;
         }
     };
-
-	if(start == 'b')
-	{
-		bestOpponentMove();	//Calculate a move for the opponent
-	}
 	
 	//Function for performing the opponent's moves
-	formatOpponentResults = function() {
-		if (engineMessages[0] != null) {
-            depthResults.push(engineMessages[0].split("\u0020")[1]);	//engineMessages[i]; i can be changed to skill level variable
-        }
-	
+	formatOpponentResults = function () {
+        
+    if (engineMessages[0] != null) {
+        depthResults.push(engineMessages[0].split("\u0020")[0]); //engineMessages[i]; i can be changed to skill level variable
+        
+    }
+
+    var wholeMove = engineMessages[0].substring(1, 5);
     moves = [];
-    engineMessages = [];
-	var move = depthResults[0].split("");	//Split up the move into character array
-	var moveFrom = (move[0] + move[1]);	//Get move from
-	var moveTo = (move[2] + move[3]);	//Get position to move to
+    var moveFrom = engineMessages[0].substring(1, 3); //Get move from
+    var moveTo = engineMessages[0].substring(3, 5); //Get position to move to
 
-    	game.move({from: moveFrom, to: moveTo});	//Make move
-
-	board1.position(game.fen());
-	updateStatus();			//Update board
+        
+        
+    game.move({
+        from: moveFrom
+        , to: moveTo
+    }); //Make move
+        engineMessages = [];
+        depthResults = [];
+    board1.position(game.fen());
+    updateStatus(); //Update board
 };
 	
     var removeGreySquares = function () {
@@ -70,6 +74,10 @@ var init = function () {
     };
 
     var onDrop = function (source, target) {
+        if (!playerTurn)
+            {
+                return 'snapback';
+            }
         removeGreySquares();
 
         // see if the move is legal
@@ -181,23 +189,35 @@ var init = function () {
     };
     board1 = ChessBoard('board', cfg);
 
+    
+    
     updateStatus();
-    if (playerTurn == false )
-            window.setTimeout(makeRandomMove, 250);    //Computer makes random move for the opponent
+    if((playerTurn == false))
+	{
+		bestOpponentMove();	//Calculate a move for the opponent
+	}
+    //if (playerTurn == false )
+            //window.setTimeout(makeRandomMove, 250);    //Computer makes random move for the opponent
 
 }; // end init()
 
 function start(side){
+    
+    document.getElementById("sideSelect").style.visibility = "hidden";
+    document.getElementById("board").style.visibility = "visible";
+    document.getElementById("boardUI").style.visibility = "visible";
+    
     playerSide = side;
     playerTurn = (playerSide == 'w') ? true : false;
     
-    var tutorNames = ['Grigor Cruz', 'Jakeson Bramberly', 'Wang Yi', 'Sergey Deshun', 'Magners Ciderson', 'Sebastian Crowler', 'Lucy Thompson', 'Pat Smith'];
+    var tutorNames = ['Grigor Cruz', 'Jakeson Bramberly', 'Wang Yi', 'Sergey Deshun', 'Magners Carlsberg', 'Sebastian Crowler', 'Lucy Thompson', 'Pat Smith'];
     var imageNo = Math.floor(Math.random() * (8 - 0 + 1)) + 0;
 
     if (imageNo == 0)
     {
         imageNo = 1;
         //this is to fix the random number error (from getting a 0)
+        //Cosmic bit flip
     }
 
     document.getElementById("name").innerHTML = tutorNames[imageNo - 1];
@@ -234,6 +254,8 @@ function start(side){
 
             }
         init();
+        if (side == 'b')
+            board1.orientation('black');
 };
 
 //Move data object template
@@ -262,39 +284,34 @@ function bestOpponentMove() {
 	}
 	else
 	{
-		engine.postMessage('position fen ' + board1.fen() + " b");
+		engine.postMessage('position fen ' + board1.fen() + " w");
 	}
 	
 	//Wait for 3 seconds before beginning to make opponent's move
 	setTimeout(function() {
-		engine.postMessage('go movetime 10');	//Search for a number of miliseconds
+		engine.postMessage('go movetime 1');	//Search for a number of miliseconds
 	}, 3000);
 };
 
 //Message from the engine
 engine.onmessage = function (event) {
     //Only advise on player's turn
-
+    
+    //Check if first irrelevant message
+    if (String(event.data).substring(0, 4) != 'Stoc') {
         //When the engine outputs 'bestmove' the search has finished
-        if (String(event.data).substring(0, 8) == 'bestmove') 
-		{
-			if (playerTurn)
-			{
-				console.log('FINISHED');
-				formatResults();
-				onReady(moves);            //Initialise the tutor
-			} 
-			else 
-			{
-				formatOpponentResults();
-			}            
-        } 
-		else 
-		{
+        if (String(event.data).substring(0, 8) == 'bestmove') {
+            if (playerTurn) {
+                formatResults();
+                onReady(moves); //Initialise the tutor
+            } else {
+                formatOpponentResults();
+            }
+        } else {
             engineMessages.push(String(event.data).split(' pv')[1]);
-		}
+        }
+    }
 };
-
 //When the engine has finished outputting
 function formatResults() {
 

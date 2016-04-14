@@ -463,6 +463,7 @@ footer p {
 
 #chessSection {
 	height: 605px;
+	position: relative;
 }
 
 
@@ -792,8 +793,8 @@ p#typing {
 	border: 2px solid #222 !important;
 	position: absolute;
 	z-index: 1;
-	left: 460px;
-	top: 136px;
+	left: 93px;
+	top: 0px;
 }
 
 #sideSelect_inner {

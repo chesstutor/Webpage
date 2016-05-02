@@ -814,8 +814,8 @@ p#typing {
 	text-transform: uppercase;
 	font-family: 'Josefin Sans', sans-serif;
 	letter-spacing: 0.1em;
-	margin-bottom: 140px;
-	margin-top: 50px;
+	margin-bottom: 20px;
+	margin-top: -64px;
 }
 
 #sideSelect_inner {
@@ -841,6 +841,8 @@ p#typing {
 	text-transform: uppercase;
 	transition: all 0.3s ease 0s;
 	margin: 10px;
+	position: relative;
+	top: 159px;
 }
 
 #whiteButton {
@@ -861,7 +863,7 @@ p#typing {
 	width: 52px;
 	height: 100px;
 	position: relative;
-	top: 250px;
+	top: 367px;
 }
 
 #sideSelect_inner #kingWhitePiece {
@@ -882,5 +884,75 @@ p#typing {
 		visibility: visible;
 	 
 }
+
+#response ul {
+		margin: 0px;
+		padding: 0px;	
+}
+
+#sideSelect h3 {
+	color: #5C2A21;
+	font-size: 40px;
+}
+
+#bgDifficulty {
+	background: #F6B983 none repeat scroll 0% 0%;
+	width: 440px;
+	height: 70px;
+	margin: 0px auto;
+	position: relative;
+	top: 31px;
+}
+
+.diffLevel {
+	color: #5C2A21;
+	text-transform: uppercase;
+	font-family: "Josefin Sans",sans-serif;
+	font-size: 17px;
+	letter-spacing: 0.1em;
+	position: relative;
+	bottom: 24px;
+}
+
+#easyB {
+	background: #47741A;
+	transition: all 0.3s ease 0s;
+	/* #598130 */
+
+}
+
+#easyB:hover {
+	background: #385c14;
+}
+
+#mediumB {
+	background:#FF851B;
+	transition: all 0.3s ease 0s;
+	/* #ff9131 */
+
+}
+
+#mediumB:hover {
+	background: #cc6a15;
+}
+
+#hardB {
+	background:#FF4136;
+	transition: all 0.3s ease 0s;
+	/* #ff544a */
+
+}
+
+#hardB:hover {
+	background:#cc342b;
+}
+
+.buttonBG {
+	display: inline-block;
+	width: 134px;
+	height: 50px;
+	border: 1px solid #5C2A21;
+}
+
 
 /* =================================== over 885 lines of CSS...well ....========================= */

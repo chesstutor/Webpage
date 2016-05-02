@@ -1,6 +1,6 @@
 var moveCount = 0;
 var inCheck = false;
-var names = ['Pawn', 'Rook', 'Knight', 'Bishop', 'Queen', 'King']
+var names = ['Pawn', 'Rook', 'Knight', 'Bishop', 'Queen', 'King'];
 
 
 //Engine has finished calculating
@@ -223,7 +223,7 @@ function response_check(moves) {
         , 'You\'re going to lose if you don\'t move your &p1 to stop check'
 
 
-        , 'You\' in a bad spot, prevent check with your &p1'
+        , 'You\'re in a bad spot, prevent check with your &p1'
 
 
         , 'You\'re going to lose if you don\' get out of check using your &p1'
@@ -355,15 +355,24 @@ function response_endgameCM()
 {
 	if (playerTurn === true)
 			{
-				response = 'Congratulations, you are victorious! You\'ve heeded my advice well!';
+				var responseCMVic = ['Congratulations, you are victorious! You\'ve heeded my advice well!'
 				
-				beginOutput(response);
+				,'Well done there friend! Think I may have to watch out for my job at this rate!'
+				
+				,'Wow, superb job buddy. Colour me proud!'];
+				
+				
+				beginOutput(responseCMVic[Math.floor((Math.random() * 3) + 0)]);
 			}
 			else
 			{
-				response = 'Commiserations, you have lost unfortunately. Hope my advice didn\'t lead you astray.';
+				var responseCMLoss = ['Commiserations, you have lost unfortunately. Hope my advice didn\'t lead you astray.'
 				
-				beginOutput(response);
+				,'Damn. Apologies, looks like you\'ve lost. I\'ll try to give better advice next time'
+				
+				,'Don\'t let it get you down. We\'ll win next time, mark my words!'];
+				
+				beginOutput(responseCMLoss[Math.floor((Math.random() * 2) + 0)]);
 			}
 }
 
@@ -371,8 +380,12 @@ function response_endgameCM()
 // Function to output an end-game response in a draw scenario
 function response_endgameD()
 {
-	response = 'Looks like a draw. Try to be careful of stalemates next time.';
+	var responseDraw = ['Looks like a draw. Try to be careful of stalemates next time.'
 	
-	beginOutput(response);
+	,'Damn. It\'s ended in a stalemate. They can\'t move but aren\'t in check. My bad, I should\'ve seen that coming.'
+	
+	,'Oh good, a draw. If only we\'d got them in check. Well, there\'s always next time!'];
+	
+	beginOutput(responseDraw[Math.floor((Math.random() * 2) + 0)]);
 }
 

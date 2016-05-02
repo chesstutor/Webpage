@@ -143,27 +143,15 @@ var init = function () {
         // checkmate?
         if (game.in_checkmate() === true) {
             status = 'Game over, ' + moveColor + ' is in checkmate.';
-<<<<<<< HEAD
 			document.getElementById("ReplayButton").style="text-transform:uppercase";
 			response_endgameCM();
-		
-=======
-            document.getElementById("ReplayButton").style = "background-color:grey";
-            response_endgameCM();
-
->>>>>>> origin/master
         }
 
         // draw?
         else if (game.in_draw() === true) {
             status = 'Game over, drawn position';
-<<<<<<< HEAD
 			document.getElementById("ReplayButton").style="text-transform:uppercase";		
 			response_endgameD();
-=======
-            document.getElementById("ReplayButton").style = "background-color:grey";
-            response_endgameD();
->>>>>>> origin/master
         }
 
         // game still on

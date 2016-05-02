@@ -906,7 +906,7 @@ p#typing {
 	top: 31px;
 }
 
-.diffLevel {
+/* .diffLevel {
 	color: #5C2A21;
 	text-transform: uppercase;
 	font-family: "Josefin Sans",sans-serif;
@@ -919,7 +919,7 @@ p#typing {
 #easyB {
 	background: #47741A;
 	transition: all 0.3s ease 0s;
-	/* #598130 */
+
 
 }
 
@@ -927,10 +927,14 @@ p#typing {
 	background: #385c14;
 }
 
+#easyB:active {
+	background: #385c14;
+}
+
 #mediumB {
 	background:#FF851B;
 	transition: all 0.3s ease 0s;
-	/* #ff9131 */
+
 
 }
 
@@ -938,14 +942,22 @@ p#typing {
 	background: #cc6a15;
 }
 
+#mediumB:active {
+	background: #cc6a15;
+}
+
 #hardB {
 	background:#FF4136;
 	transition: all 0.3s ease 0s;
-	/* #ff544a */
+
 
 }
 
 #hardB:hover {
+	background:#cc342b;
+}
+
+#hardB:focus {
 	background:#cc342b;
 }
 
@@ -954,7 +966,8 @@ p#typing {
 	width: 134px;
 	height: 50px;
 	border: 1px solid #5C2A21;
-}
+	cursor: pointer;
+} */
 
 .chatBubble {
     background-color: rgba(197, 118, 0, 0.42);
@@ -965,6 +978,46 @@ p#typing {
 }
 
 /* RADIO BUTTONS CONVERSION TO BUTTONS */
+
+#bgDifficulty input[type="radio"] {
+	display:none;
+}
+
+#bgDifficulty label {
+	display: inline-block;
+	text-transform: uppercase;
+	font-family: "Josefin Sans",sans-serif;
+	color: #111;
+	font-weight: bold;
+	font-size: 17px;
+	width: 134px;
+	height: 50px;
+	letter-spacing: 0.1em;
+	line-height: 50px;
+	border: 2px solid #5C2A21;
+}
+
+#easyRadio {
+	background: #47741A;
+	transition: all 0.3s ease 0s;
+}
+
+#mediumRadio {
+	background:#FF851B;
+	transition: all 0.3s ease 0s;
+}
+
+#hardRadio {
+	background:#FF4136;
+	transition: all 0.3s ease 0s;
+}
+
+
+
+#bgDifficulty input[type="radio"]:checked + label {
+    border: 2px solid #fff;
+}
+
 
 
 /* =================================== over 950 lines of CSS...well ....========================= */

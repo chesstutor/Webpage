@@ -81,7 +81,17 @@ function toggleCheck(value) {
 };
 
 function pushResponse(message) {
-    document.getElementById("response").innerHTML = message;
+    //document.getElementById("response").innerHTML = message;
+    
+    var chatBox = document.getElementById("response");
+    var chatBubble = document.createElement('div');
+    chatBubble.className = 'chatBubble';
+    chatBubble.textContent = message;
+    
+    chatBox.appendChild(chatBubble);
+    chatBox.scrollTop = chatBox.scrollHeight;
+    
+    
     var d = new Date();
     document.getElementById("typing").innerHTML = "Last message recieved at " + d.toLocaleTimeString();
 };

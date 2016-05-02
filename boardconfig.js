@@ -8,12 +8,13 @@ engine = new Worker('stockfish.js');
 playerSide = 'b';
 var engineMessages = [""];
 var depthResults = [""];
-
 var moves = [new moveData("", "", "", "")];
+var difficulty = 0;
 
 $(document).ready(function () {
+    //Emergency opponent move maker
     
-    
+
     //start('w');
 });
 
@@ -33,32 +34,32 @@ var init = function () {
             return false;
         }
     };
-	
-	//Function for performing the opponent's moves
-	formatOpponentResults = function () {
-        
-    if (engineMessages[0] != null) {
-        depthResults.push(engineMessages[0].split("\u0020")[0]); //engineMessages[i]; i can be changed to skill level variable
-        
-    }
 
-    var wholeMove = engineMessages[0].substring(1, 5);
-    moves = [];
-    var moveFrom = engineMessages[0].substring(1, 3); //Get move from
-    var moveTo = engineMessages[0].substring(3, 5); //Get position to move to
+    //Function for performing the opponent's moves
+    formatOpponentResults = function () {
 
-        
-        
-    game.move({
-        from: moveFrom
-        , to: moveTo
-    }); //Make move
+        if (engineMessages[0] != null) {
+            depthResults.push(engineMessages[0].split("\u0020")[0]); //engineMessages[i]; i can be changed to skill level variable
+
+        }
+
+        var wholeMove = engineMessages[0].substring(1, 5);
+        moves = [];
+        var moveFrom = engineMessages[0].substring(1, 3); //Get move from
+        var moveTo = engineMessages[0].substring(3, 5); //Get position to move to
+
+
+
+        game.move({
+            from: moveFrom
+            , to: moveTo
+        }); //Make move
         engineMessages = [];
         depthResults = [];
-    board1.position(game.fen());
-    updateStatus(); //Update board
-};
-	
+        board1.position(game.fen());
+        updateStatus(); //Update board
+    };
+
     var removeGreySquares = function () {
         $('#board .square-55d63').css('background', '');
     };
@@ -74,10 +75,9 @@ var init = function () {
     };
 
     var onDrop = function (source, target) {
-        if (!playerTurn)
-            {
-                return 'snapback';
-            }
+        if (!playerTurn) {
+            return 'snapback';
+        }
         removeGreySquares();
 
         // see if the move is legal
@@ -85,7 +85,7 @@ var init = function () {
             from: source
             , to: target
             , promotion: 'q' // NOTE: always promote to a queen for example simplicity
-		});
+        });
 
         // illegal move
         if (move === null)
@@ -93,12 +93,12 @@ var init = function () {
         else {
             board1.position(game.fen());
         };
-		updateStatus();
+        updateStatus();
 
-		if(!playerTurn)	//If it's the opponent's move
-		{
-			bestOpponentMove();	//Calculate a move for the opponent
-		}		
+        if (!playerTurn) //If it's the opponent's move
+        {
+            bestOpponentMove(); //Calculate a move for the opponent
+        }
     };
 
     var onMouseoverSquare = function (square, piece) {
@@ -143,16 +143,16 @@ var init = function () {
         // checkmate?
         if (game.in_checkmate() === true) {
             status = 'Game over, ' + moveColor + ' is in checkmate.';
-			document.getElementById("ReplayButton").style="background-color:grey";
-			response_endgameCM();
-		
+            document.getElementById("ReplayButton").style = "background-color:grey";
+            response_endgameCM();
+
         }
 
         // draw?
         else if (game.in_draw() === true) {
             status = 'Game over, drawn position';
-			document.getElementById("ReplayButton").style="background-color:grey";			
-			response_endgameD();
+            document.getElementById("ReplayButton").style = "background-color:grey";
+            response_endgameD();
         }
 
         // game still on
@@ -189,73 +189,87 @@ var init = function () {
     };
     board1 = ChessBoard('board', cfg);
 
-    
-    
+
+
     updateStatus();
-    if((playerTurn == false))
-	{
-		bestOpponentMove();	//Calculate a move for the opponent
-	}
+    if ((playerTurn == false)) {
+        bestOpponentMove(); //Calculate a move for the opponent
+    }
     //if (playerTurn == false )
-            //window.setTimeout(makeRandomMove, 250);    //Computer makes random move for the opponent
+    //window.setTimeout(makeRandomMove, 250);    //Computer makes random move for the opponent
+    $('#userImage').click(function () {
+        console.log('clicked');
+    });
+    
+
 
 }; // end init()
 
-function start(side){
-    
+function start(side) {
+
     document.getElementById("sideSelect").style.visibility = "hidden";
     document.getElementById("board").style.visibility = "visible";
     document.getElementById("boardUI").style.visibility = "visible";
-    
+
     playerSide = side;
     playerTurn = (playerSide == 'w') ? true : false;
-    
+
     var tutorNames = ['Grigor Cruz', 'Jakeson Bramberly', 'Wang Yi', 'Sergey Deshun', 'Magners Carlsberg', 'Sebastian Crowler', 'Lucy Thompson', 'Pat Smith'];
     var imageNo = Math.floor(Math.random() * (8 - 0 + 1)) + 0;
 
-    if (imageNo == 0)
-    {
+    if (imageNo == 0) {
         imageNo = 1;
         //this is to fix the random number error (from getting a 0)
         //Cosmic bit flip
     }
-
+    
+    if(document.getElementById('radio1').checked){
+        difficulty = 0;
+    }
+    if(document.getElementById('radio2').checked){
+        difficulty = 1;
+    }
+    if(document.getElementById('radio3').checked){
+        difficulty = 2;
+    }
+    
+    
     document.getElementById("name").innerHTML = tutorNames[imageNo - 1];
     var image = document.getElementById('userImage');
-                                                    
-        switch (imageNo) {
-            case 1:
-                image.src = "img/profilepic1.jpg";
-                break;
-            case 2:
-                image.src = "img/profilepic2.jpg";
-                break;
-            case 3:
-                image.src = "img/profilepic3.jpg";
-                break;
-            case 4:
-                image.src = "img/profilepic4.png";
-                break;
-            case 5:
-                image.src = "img/profilepic5.jpg";
-                break;
-            case 6:
-                image.src = "img/profilepic6.jpg";
-                break;
-            case 7:
-                image.src = "img/profilepic7.png";
-                break;
-            case 8:
-                image.src = "img/profilepic8.jpg";
-                break;
-            default: 
-                image.src="img/board-background.png";
-                break;
 
-            }
-        init();
-        if (side == 'b')
-            board1.orientation('black');
+    switch (imageNo) {
+    case 1:
+        image.src = "img/profilepic1.jpg";
+        break;
+    case 2:
+        image.src = "img/profilepic2.jpg";
+        break;
+    case 3:
+        image.src = "img/profilepic3.jpg";
+        break;
+    case 4:
+        image.src = "img/profilepic4.png";
+        break;
+    case 5:
+        image.src = "img/profilepic5.jpg";
+        break;
+    case 6:
+        image.src = "img/profilepic6.jpg";
+        break;
+    case 7:
+        image.src = "img/profilepic7.png";
+        break;
+    case 8:
+        image.src = "img/profilepic8.jpg";
+        break;
+    default:
+        image.src = "img/board-background.png";
+        break;
+
+    }
+    init();
+    if (side == 'b')
+        board1.orientation('black');
 };
 
 //Move data object template
@@ -265,7 +279,7 @@ function moveData(squareFrom, squareTo, movingPiece, takenPiece) {
     this.piece = movingPiece;
     this.taken = takenPiece;
 }
- 
+
 
 //Query the engine
 function bestMove() {
@@ -279,25 +293,26 @@ function bestMove() {
 function bestOpponentMove() {
     depthResults = [];
     engineMessages = [];
-	if(playerSide == 'w')
-	{
-		engine.postMessage('position fen ' + board1.fen() + " b");
-	}
-	else
-	{
-		engine.postMessage('position fen ' + board1.fen() + " w");
-	}
-	
-	//Wait for 3 seconds before beginning to make opponent's move
-	setTimeout(function() {
-		engine.postMessage('go movetime 3');	//Search for a number of miliseconds
-	}, 3000);
+    if (playerSide == 'w') {
+        engine.postMessage('position fen ' + board1.fen() + " b");
+    } else {
+        engine.postMessage('position fen ' + board1.fen() + " w");
+    }
+
+    //Easy, Medium, Hard in ms
+    var difficulties = [2, 10, 2000];
+
+
+    //Wait for 3 seconds before beginning to make opponent's move
+    setTimeout(function () {
+        engine.postMessage('go movetime ' + difficulties[difficulty]); //Search for a number of miliseconds
+    }, 3000);
 };
 
 //Message from the engine
 engine.onmessage = function (event) {
     //Only advise on player's turn
-    
+
     //Check if first irrelevant message
     if (String(event.data).substring(0, 4) != 'Stoc') {
         //When the engine outputs 'bestmove' the search has finished
@@ -375,4 +390,3 @@ function printMoves() {
 function getMoves() {
     return moves;
 };
-

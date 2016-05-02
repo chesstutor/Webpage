@@ -906,68 +906,7 @@ p#typing {
 	top: 31px;
 }
 
-/* .diffLevel {
-	color: #5C2A21;
-	text-transform: uppercase;
-	font-family: "Josefin Sans",sans-serif;
-	font-size: 17px;
-	letter-spacing: 0.1em;
-	position: relative;
-	bottom: 24px;
-}
 
-#easyB {
-	background: #47741A;
-	transition: all 0.3s ease 0s;
-
-
-}
-
-#easyB:hover {
-	background: #385c14;
-}
-
-#easyB:active {
-	background: #385c14;
-}
-
-#mediumB {
-	background:#FF851B;
-	transition: all 0.3s ease 0s;
-
-
-}
-
-#mediumB:hover {
-	background: #cc6a15;
-}
-
-#mediumB:active {
-	background: #cc6a15;
-}
-
-#hardB {
-	background:#FF4136;
-	transition: all 0.3s ease 0s;
-
-
-}
-
-#hardB:hover {
-	background:#cc342b;
-}
-
-#hardB:focus {
-	background:#cc342b;
-}
-
-.buttonBG {
-	display: inline-block;
-	width: 134px;
-	height: 50px;
-	border: 1px solid #5C2A21;
-	cursor: pointer;
-} */
 
 .chatBubble {
     background-color: rgba(197, 118, 0, 0.42);
@@ -1018,6 +957,29 @@ p#typing {
     border: 2px solid #fff;
 }
 
+#ReplayButton {
+	text-transform: uppercase;
+	font-family: "Josefin Sans",sans-serif;
+	font-weight: bold;
+	font-size: 27px;
+	width: 205px;
+	height: 64px;
+	letter-spacing: 0.1em;
+	line-height: 30px;
+	position: relative;
+	bottom: 231px;
+	background: #ae0000;
+	border: 2px solid #222;
+	color: #222;
+	left: 291px;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+}
 
+#ReplayButton:hover {
+	color: #fff;
+	background: #08A842;
+	border: 1px solid #08A842;
+}
 
 /* =================================== over 950 lines of CSS...well ....========================= */

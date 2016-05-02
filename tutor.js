@@ -144,6 +144,31 @@ function modePiece(moves) {
 
 function response_startMove() {
 
+	//make sure to include space after sentence
+	var helloSentences = [
+	"Hi there! Follow my advice and you\'ll be fine. "
+	
+	
+	, "Good day, I'll be your chess tutor for this game. "
+	
+	
+	, "I'll be your tutor for this game, try to do what I say. "
+	
+	
+	, "Hey, hope you're having a good day. Follow my advice and it'll only get better! "
+	
+	
+	, "Hi. If you want help, feel free to listen to what i've got to say. "
+	
+	
+	, "Hello! I'll try to help you win. "
+	
+	
+	, "Hi there. Take my advice and you'll be fine. "
+	
+	
+	, "Hey. Listen to me if you want to learn chess! "];
+
     var sentences = [
         "In the opening, you want to try and maximise your influence on the center of the board."
 
@@ -169,12 +194,13 @@ function response_startMove() {
         , "Each piece has its highest possible range of candidate moves in the center of the board. You should aim to have them there."
 
 
-        , "It is easier to secure checks if you have your pieces securely rooted in the center of the board."
+        , "It is easier to secure check if you have your pieces securely rooted in the center of the board."
 
 
-        , "You should aim to hold control of the King's and Queen's files 'D' and 'E' during the opening."]
+        , "You should aim to hold control of the King's and Queen's files 'D' and 'E' during the opening."];
 
-    return sentences[Math.floor((Math.random() * 9) + 0)];
+		//return introduction string + starting advice
+    return (helloSentences[Math.floor((Math.random() * helloSentences.length) + 0)] + sentences[Math.floor((Math.random() * 9) + 0)]);
 };
 
 function response_check(moves) {

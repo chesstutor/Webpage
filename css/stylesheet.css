@@ -539,7 +539,7 @@ div#response {
     position: relative;
     top: 0px;
     font-size: 19px;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 #userImage {

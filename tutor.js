@@ -406,7 +406,33 @@ function response_endgameCM()
 				,'Wow, superb job buddy. Colour me proud!'];
 				
 				
-				beginOutput(responseCMVic[Math.floor((Math.random() * 3) + 0)]);
+				var responseCMVicQuick = ['Wow! Now that was one hell of a good fast game! Good job bud.'
+				
+				,'Crikey, were you in a hurry or something? Nah, I kid, great job!'
+				
+				,'That was one of the fastest games I\'ve ever seen. I\'m starting to think you may be even better than me!'];
+				
+				
+				var responseCMVicLong = ['Phew. That was a long battle. I\'m so glad we won in the end though!'
+				
+				,'What a lengthy back and forth that game was! Hopefully we\'ll win in a more timely manner next time.'
+				
+				,'Well. It wasn\'t a quick game, but a win is still a win I suppose.'];
+				
+				
+				if(moveCount < 15)
+				{
+					beginOutput(responseCMVicQuick[Math.floor((Math.random() * 3) + 0)]);
+				}
+				else if (moveCount >= 15 && moveCount < 30)
+				{
+					beginOutput(responseCMVic[Math.floor((Math.random() * 3) + 0)]);
+				}
+				else
+				{
+					beginOutput(responseCMVicLong[Math.floor((Math.random() * 3) + 0)]);
+				}
+				
 			}
 			else
 			{
@@ -416,7 +442,34 @@ function response_endgameCM()
 				
 				,'Don\'t let it get you down. We\'ll win next time, mark my words!'];
 				
-				beginOutput(responseCMLoss[Math.floor((Math.random() * 2) + 0)]);
+				
+				var responseCMLossQuick = ['That was an awfully quick loss! You really should have followed my plans.'
+				
+				,'Jeez, that was a fast game. We\'ll both have to try a lot harder next time!'
+				
+				,'Well I\'ll be. That. Was. Quick. Maybe next time we\'ll go for longer, yeah?'];
+				
+				
+				var responseCMLossLong = ['That sure was a battle of attrition. Can\'t say I blame you for losing, I was getting tired too!'
+				
+				,'Man, that was one hell of a long game! Good thing it\'s over now, I bet we\'ve both got other things to get on with! Haha'
+				
+				,'How long was that match, eh? I\'ve seen tournament matches over quicker than that.'];
+				
+				
+				if(moveCount < 15)
+				{
+					beginOutput(responseCMLossQuick[Math.floor((Math.random() * 2) + 0)]);
+				}
+				else if(moveCount >= 15 && moveCount < 30)
+				{
+					beginOutput(responseCMLoss[Math.floor((Math.random() * 2) + 0)]);
+				}
+				else
+				{
+					beginOutput(responseCMLossLong[Math.floor((Math.random() * 2) + 0)]);
+				}
+
 			}
 }
 

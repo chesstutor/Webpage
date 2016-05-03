@@ -962,20 +962,18 @@ p#typing {
 
 #easyRadio {
 	background: #47741A;
-	transition: all 0.3s ease 0s;
-	
+	transition: all 0.3s ease 0s;	
 }
 
 #mediumRadio {
 	background:#FF851B;
 	transition: all 0.3s ease 0s;
-
-
 }
 
 #hardRadio {
 	background:#FF4136;
-	transition: all 0.3s ease 0s;}
+	transition: all 0.3s ease 0s;
+}
 
 
 .chatBubble {
@@ -987,30 +985,43 @@ p#typing {
 }
 
 /* RADIO BUTTONS CONVERSION TO BUTTONS */
+#bgDifficulty input[type="radio"] {
+	display:none;
+}
 
-#bgDifficulty input[type="radio"]:checked + label {
-    border: 2px solid #fff;}
-
-#bgDifficulty label{
-	display: inline-block;}
-	
-#ReplayButton {
+#bgDifficulty label {
+	display: inline-block;
 	text-transform: uppercase;
 	font-family: "Josefin Sans",sans-serif;
+	color: #111;
 	font-weight: bold;
-	font-size: 27px;
-	width: 205px;
-	height: 64px;
+	font-size: 17px;
+	width: 134px;
+	height: 50px;
 	letter-spacing: 0.1em;
-	line-height: 30px;
-	position: relative;
-	bottom: 231px;
-	background: #ae0000;
-	border: 2px solid #222;
-	color: #222;
-	left: 291px;
-	cursor: pointer;
+	line-height: 50px;
+	border: 2px solid #5C2A21;
+}
+
+#easyRadio {
+	background: #47741A;
 	transition: all 0.3s ease 0s;
+}
+
+#mediumRadio {
+	background:#FF851B;
+	transition: all 0.3s ease 0s;
+}
+
+#hardRadio {
+	background:#FF4136;
+	transition: all 0.3s ease 0s;
+}
+
+
+
+#bgDifficulty input[type="radio"]:checked + label {
+    border: 2px solid #fff;
 }
 	
 #ReplayButton:hover {
@@ -1023,4 +1034,4 @@ p#typing {
 	text-align: justify !important;
 }
 
-/* =================================== over 885 lines of CSS...well ....========================= */
+/* =================================== over 1000 lines of CSS...well ....========================= */

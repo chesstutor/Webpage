@@ -35,6 +35,7 @@
 					<div class="navItems">
 						<ul>
 							<li><a href="play.html#marker">Play</a></li>
+								<li><a href="tutor.html">Tutors</a></li>
 							<li><a href="https://en.wikipedia.org/wiki/Rules_of_chess">Rules</a></li>
 							<li><a href="about.html">About</a></li>
 						</ul>
@@ -79,22 +80,16 @@
 
 											<img src="img/kingPieceBlack.png" id="kingBlackPiece" alt="Black Piece" />
 
-						    			<h1>Select Difficulty</h1>
+						    			<h1>Choose your side</h1>
 						    			<h3>&amp;</h3>
-						    			<h3>Choose your side</h3>
+						    			<h3>Difficulty</h3>
 
 						    				<div id="bgDifficulty">
 						    						&nbsp;
-						    						<input type="radio" id="radio1" name="radios" value="all" checked>
-						    						<label for="radio1" id="easyRadio">Easy</label>
 
-						    						<input type="radio" id="radio2" name="radios" value="false" >
-						    						<label for="radio2" id="mediumRadio">Medium</label>
-
-						    						<input type="radio" id="radio3" name="radios" value="true">
-						    						<label for="radio3" id="hardRadio">Hard</label>
-
-
+						    						<div id="easyB" class="buttonBG"><h6 class="diffLevel">Easy</h6></div>
+						    						<div id="mediumB" class="buttonBG"><h6 class="diffLevel">Medium</h6></div>
+						    						<div id="hardB" class="buttonBG"><h6 class="diffLevel">Hard</h6></div>
 						    				</div>
 						    			<a onClick="start('w')" class="button2" id="whiteButton">White</a>
 										<a onClick="start('b')" class="button2" id="blackButton">Black</a>
@@ -123,7 +118,7 @@
                                     </div>
 		                        </div>      
 	                    </div>     
-						<input id="ReplayButton" type="button" style="display: none" value="Play Again" onclick="history.go(0);">
+						<input id="ReplayButton" type="button" value="Replay" style="display: none" onclick="history.go(0);"
 				</section>					
             </div> 
 			<div id="full_background_Width">

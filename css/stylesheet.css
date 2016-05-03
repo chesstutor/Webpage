@@ -202,7 +202,7 @@ a:hover {
 
 .navItems ul {
 	margin: 0;
-	width: 200px;
+	width: 280px;
 }
 
 .navItems {
@@ -539,7 +539,7 @@ div#response {
     position: relative;
     top: 0px;
     font-size: 19px;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 #userImage {
@@ -948,54 +948,35 @@ p#typing {
 }
 
 .diffLevel {
-	color: #5C2A21;
 	text-transform: uppercase;
 	font-family: "Josefin Sans",sans-serif;
+	color: #111;
+	font-weight: bold;
 	font-size: 17px;
-	letter-spacing: 0.1em;
-	position: relative;
-	bottom: 24px;
-}
-
-#easyB {
-	background: #47741A;
-	transition: all 0.3s ease 0s;
-	/* #598130 */
-
-}
-
-#easyB:hover {
-	background: #385c14;
-}
-
-#mediumB {
-	background:#FF851B;
-	transition: all 0.3s ease 0s;
-	/* #ff9131 */
-
-}
-
-#mediumB:hover {
-	background: #cc6a15;
-}
-
-#hardB {
-	background:#FF4136;
-	transition: all 0.3s ease 0s;
-	/* #ff544a */
-
-}
-
-#hardB:hover {
-	background:#cc342b;
-}
-
-.buttonBG {
-	display: inline-block;
 	width: 134px;
 	height: 50px;
-	border: 1px solid #5C2A21;
+	letter-spacing: 0.1em;
+	line-height: 50px;
+	border: 2px solid #5C2A21;
 }
+
+#easyRadio {
+	background: #47741A;
+	transition: all 0.3s ease 0s;
+	
+}
+
+#mediumRadio {
+	background:#FF851B;
+	transition: all 0.3s ease 0s;
+
+
+}
+
+#hardRadio {
+	background:#FF4136;
+	transition: all 0.3s ease 0s;}
+
 
 .chatBubble {
     background-color: rgba(197, 118, 0, 0.42);
@@ -1004,5 +985,37 @@ p#typing {
     padding: 0 12px;
     margin: 4px 0;
 }
+
+/* RADIO BUTTONS CONVERSION TO BUTTONS */
+
+#bgDifficulty input[type="radio"]:checked + label {
+    border: 2px solid #fff;}
+
+#bgDifficulty label{
+	display: inline-block;}
+	
+#ReplayButton {
+	text-transform: uppercase;
+	font-family: "Josefin Sans",sans-serif;
+	font-weight: bold;
+	font-size: 27px;
+	width: 205px;
+	height: 64px;
+	letter-spacing: 0.1em;
+	line-height: 30px;
+	position: relative;
+	bottom: 231px;
+	background: #ae0000;
+	border: 2px solid #222;
+	color: #222;
+	left: 291px;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;}
+	
+#ReplayButton:hover {
+	color: #fff;
+	background: #08A842;
+	border: 1px solid #08A842;}	
+	
 
 /* =================================== over 885 lines of CSS...well ....========================= */

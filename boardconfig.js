@@ -10,10 +10,9 @@ var engineMessages = [""];
 var depthResults = [""];
 
 var moves = [new moveData("", "", "", "")];
-var difficulty = 0;
 
 $(document).ready(function () {
-    //Emergency opponent move maker
+    
     
     //start('w');
 });
@@ -43,18 +42,17 @@ var init = function () {
         
     }
 
-        var wholeMove = engineMessages[0].substring(1, 5);
-        moves = [];
-        var moveFrom = engineMessages[0].substring(1, 3); //Get move from
-        var moveTo = engineMessages[0].substring(3, 5); //Get position to move to
+    var wholeMove = engineMessages[0].substring(1, 5);
+    moves = [];
+    var moveFrom = engineMessages[0].substring(1, 3); //Get move from
+    var moveTo = engineMessages[0].substring(3, 5); //Get position to move to
 
-
-
-        game.move({
-            from: moveFrom
-            , to: moveTo
-        }); //Make move
-		
+        
+        
+    game.move({
+        from: moveFrom
+        , to: moveTo
+    }); //Make move
         engineMessages = [];
         depthResults = [];
     board1.position(game.fen());
@@ -145,7 +143,9 @@ var init = function () {
         // checkmate?
         if (game.in_checkmate() === true) {
             status = 'Game over, ' + moveColor + ' is in checkmate.';
+            
 			document.getElementById("ReplayButton").style="text-transform:uppercase";
+
 			response_endgameCM();
 		
         }
@@ -195,10 +195,9 @@ var init = function () {
     
     updateStatus();
     if((playerTurn == false))
-	 //window.setTimeout(makeRandomMove, 250);    //Computer makes random move for the opponent
-    $('#userImage').click(function () {
-        console.log('clicked');
-    });
+	{
+		bestOpponentMove();	//Calculate a move for the opponent
+	}
     //if (playerTurn == false )
             //window.setTimeout(makeRandomMove, 250);    //Computer makes random move for the opponent
 
@@ -221,15 +220,6 @@ function start(side){
         imageNo = 1;
         //this is to fix the random number error (from getting a 0)
         //Cosmic bit flip
-    }
-	 if(document.getElementById('radio1').checked){
-        difficulty = 0;
-    }
-    if(document.getElementById('radio2').checked){
-        difficulty = 1;
-    }
-    if(document.getElementById('radio3').checked){
-        difficulty = 2;
     }
 
     document.getElementById("name").innerHTML = tutorNames[imageNo - 1];

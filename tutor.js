@@ -21,7 +21,12 @@ var onReady = function (moves) {
 
     //If the move is to develop a piece, and it is in the early game
     var element = getPart(moves[moves.length - 1], 'from', 'rank');
-    if ((moveCount < 8) && ((element == '1') && playerSide == 'w') || ((element == '8') && playerSide == 'b')) {
+    if (((element == '1') && playerSide == 'w') || ((element == '8') && playerSide == 'b')) {
+        if (moves[moves.length - 1]['piece'] == 'King')
+            {
+                beginOutput('Your King is vulnerable');
+                return;
+            }
         beginOutput(buildSentence(['Move a &p1 off the back row.', 'Develop a &p1 off of the back rank', 'You should get a &p1 into the battle', 'Don\'t let your &p1 sit at the back', 'Think about moving your &p1', 'Your &p1 is not helping anything sitting at the back', 'Make use of your &p1, don\'t let it sit at the back'], moves[moves.length - 1]['piece']));
         return;
     }

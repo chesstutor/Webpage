@@ -1024,14 +1024,33 @@ p#typing {
     border: 2px solid #fff;
 }
 	
+#ReplayButton {
+	text-transform: uppercase;
+	font-family: "Josefin Sans",sans-serif;
+	font-weight: bold;
+	font-size: 27px;
+	width: 205px;
+	height: 64px;
+	letter-spacing: 0.1em;
+	line-height: 30px;
+	position: relative;
+	bottom: 341px;
+	background: #AE0000 none repeat scroll 0% 0%;
+	border: 2px solid #222;
+	color: #222;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+}
+
 #ReplayButton:hover {
 	color: #fff;
 	background: #08A842;
 	border: 1px solid #08A842;
-}	
+}
 	
 .tutorPageSection p {
 	text-align: justify !important;
 }
+
 
 /* =================================== over 1000 lines of CSS...well ....========================= */

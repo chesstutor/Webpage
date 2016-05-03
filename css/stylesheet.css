@@ -1010,12 +1010,17 @@ p#typing {
 	color: #222;
 	left: 291px;
 	cursor: pointer;
-	transition: all 0.3s ease 0s;}
+	transition: all 0.3s ease 0s;
+}
 	
 #ReplayButton:hover {
 	color: #fff;
 	background: #08A842;
-	border: 1px solid #08A842;}	
+	border: 1px solid #08A842;
+}	
 	
+.tutorPageSection p {
+	text-align: justify !important;
+}
 
 /* =================================== over 885 lines of CSS...well ....========================= */

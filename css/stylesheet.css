@@ -267,6 +267,30 @@ a:hover {
 	top: 116px;
 	text-align: center;
 }
+.headerBanner#bannerRules{
+	background: url(../img/woodb.jpg) no-repeat center;
+	background-size: cover;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	min-height: 511px;
+	margin: 0 auto;
+	padding: 0;
+	top: 116px;
+	text-align: center;
+}
+.headerBanner#bannerTutor{
+	background: url(../img/tutor.jpg) no-repeat center;
+	background-size: cover;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	min-height: 511px;
+	margin: 0 auto;
+	padding: 0;
+	top: 116px;
+	text-align: center;
+}
 
 
 
@@ -761,7 +785,125 @@ p#typing {
 	font-size: 19px;
 	font-family: 'Josefin Sans', sans-serif;
  }
+ #textWrapRules {
+	width: 900px;
+	margin: 0 auto;
+	padding-top: 50px;
+}
 
+ #textWrapRules h1{
+	color: #222;
+	font-family: 'Josefin Sans', sans-serif;
+	line-height: 1.3em;
+	font-size: 35px;
+	margin: 0 0 20px 0;
+	text-transform: uppercase;
+	text-align: center;
+	border: 5px groove #000;
+}
+ #textWrapRules h2{
+	color: #222;
+	font-family: 'Josefin Sans', sans-serif;
+	line-height: 1.3em;
+	font-size: 30px;
+	margin: 0 0 20px 0;
+	text-transform: uppercase;
+	text-align: center;
+	border: 3px outset #000;
+	background: #F6B983;
+}
+
+#textWrapRules h3 {
+	color: #222;
+	font-family: 'Josefin Sans', sans-serif;
+	line-height: 1.3em;
+	font-size: 25px;
+	margin: 0 0 20px 0;
+	text-transform: uppercase;
+	text-align: center;
+	border: 3px outset #000;
+	background: #F8CEA8;
+ }
+ 
+ #textWrapRules img{
+ margin-left: 325px;
+ border: 2px solid #000;
+ width: 250px;
+ height: 250px;
+ margin-bottom: 25px;
+ }
+ 
+ #textWrapRules p{
+	text-align: center;
+	color: #222;
+	font-size: 22px;
+	font-family: 'Josefin Sans', sans-serif;
+ }
+ #textWrapPieces{
+	width: 900px;
+	margin: 0 auto;
+	padding-top: 10px;
+	padding-bottom: 50px;
+}
+
+ #textWrapPieces h1 {
+	color: #222;
+	font-family: 'Josefin Sans', sans-serif;
+	line-height: 1.3em;
+	font-size: 35px;
+	margin: 0 0 20px 0;
+	text-transform: uppercase;
+	text-align: center;
+	border: 5px groove #000;
+}
+ #textWrapPieces h2{
+	color: #222;
+	font-family: 'Josefin Sans', sans-serif;
+	line-height: 1.3em;
+	font-size: 30px;
+	margin: 0 0 20px 0;
+	text-transform: uppercase;
+	text-align: center;
+	border: 3px outset #000;
+	background: #F6B983;
+}
+
+#textWrapPieces h3 {
+	color: #222;
+	font-family: 'Josefin Sans', sans-serif;
+	line-height: 1.3em;
+	font-size: 25px;
+	margin: 0 0 20px 0;
+	text-transform: uppercase;
+	text-align: center;
+	border: 3px outset #000;
+	background: #F8CEA8;
+ }
+ 
+ #textWrapPieces h4{
+	color: #222;
+	font-family: 'Josefin Sans', sans-serif;
+	line-height: 1.3em;
+	font-size: 23px;
+	margin: 0 0 20px 0;
+	text-align: center;
+	margin-top: 14px;
+ }
+ 
+ #textWrapPieces img {
+ margin-left: 370px;
+ margin-bottom: 20px;
+ border: 2px solid #000;
+ width: 150px;
+ height: 150px;
+ }
+ 
+ #textWrapPieces p {
+	text-align: center;
+	color: #222;
+	font-size: 22px;
+	font-family: 'Josefin Sans', sans-serif;
+ }
 .contactForm legend {
 	color: #222;
 	font-family: 'Josefin Sans', sans-serif;
